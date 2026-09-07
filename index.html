@@ -158,6 +158,16 @@ nav.crumbs button:hover{color:var(--plum-900); text-decoration:underline;}
 .spotlight-emoji{width:56px; height:56px; border-radius:14px; background:var(--fern-50); display:flex; align-items:center; justify-content:center; font-size:28px; flex-shrink:0;}
 .spotlight-brand{font-family:var(--font-display); font-size:19px; font-weight:600; color:var(--plum-900); line-height:1.15;}
 .spotlight-tagline{font-size:12.5px; color:var(--fern-700); font-weight:600; margin-top:2px;}
+.spotlight-emblems{display:flex; gap:16px; margin:1px 0 3px;}
+.emblem{display:flex; flex-direction:column; align-items:center; gap:4px; width:48px; flex-shrink:0;}
+.emblem .ring{position:relative; width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:1.5px solid; flex-shrink:0;}
+.emblem .ring svg{width:15px; height:15px;}
+.emblem .ring::before{content:""; position:absolute; inset:-3px; border-radius:50%; border:1px dashed currentColor; opacity:.4;}
+.emblem .cap{font-size:8px; font-weight:800; letter-spacing:.03em; text-transform:uppercase; text-align:center; line-height:1.2; color:var(--ink-500);}
+.emblem.tone-fern .ring{background:var(--fern-50); color:var(--fern-600); border-color:var(--fern-600);}
+.emblem.tone-soy .ring{background:var(--chip-soy-bg); color:var(--chip-soy-fg); border-color:var(--chip-soy-fg);}
+.emblem.tone-gold .ring{background:var(--chip-gluten-bg); color:var(--gold-500); border-color:var(--gold-500);}
+.emblem.tone-neutral .ring{background:var(--sand-100); color:var(--ink-500); border-color:var(--line);}
 .spotlight-story{font-size:13.5px; color:var(--ink-900); line-height:1.5; font-style:italic; border-left:3px solid var(--fern-600); padding-left:12px; margin:0;}
 .spotlight-meta{font-size:11.5px; color:var(--ink-500);}
 .spotlight-products{display:flex; gap:10px; flex-wrap:wrap;}
@@ -400,8 +410,8 @@ select{font:inherit; border:1px solid var(--line); background:var(--card-bg); co
         <ul><li>Contact Us</li><li>Shipping &amp; Returns</li><li>FAQs</li><li>Accessibility</li></ul>
       </div>
       <div>
-        <h4>Reviews</h4>
-        <ul><li>4.8 ★ from 2,500+ reviews</li><li>"Makes it so easy to trust products I buy." — verified shopper</li></ul>
+        <h4>Our Standards</h4>
+        <ul><li>Every product screened for the top 9 allergens</li><li>Ingredients checked, not just categories</li></ul>
       </div>
       <div>
         <h4>Community</h4>
@@ -822,6 +832,22 @@ const Jibes = {
     }, 6000);
   },
 
+  /* ---------- brand trust emblems (computed from that brand's catalog) ---------- */
+  brandEmblemsHTML(brandName){
+    const items = PRODUCTS.filter(p=>p.brand===brandName);
+    if(!items.length) return "";
+    const every = (fn)=>items.every(fn);
+    const emblems = [];
+    if(every(p=>p.free && p.free.includes("top9"))) emblems.push({icon:"shield", label:"Top 9 Free", tone:"fern"});
+    if(every(p=>p.vegan)) emblems.push({icon:"leaf2", label:"Vegan", tone:"soy"});
+    if(every(p=>p.nonGmo)) emblems.push({icon:"check", label:"Non-GMO", tone:"neutral"});
+    if(every(p=>p.simple && p.simple<=5)) emblems.push({icon:"flask", label:"Simple Ingredients", tone:"gold"});
+    if(!emblems.length) return "";
+    return `<div class="spotlight-emblems">${emblems.slice(0,4).map(e=>
+      `<div class="emblem tone-${e.tone}"><span class="ring">${ICONS[e.icon]}</span><span class="cap">${e.label}</span></div>`
+    ).join("")}</div>`;
+  },
+
   /* ---------- paid brand spotlight (hero "window") ---------- */
   renderSpotlight(){
     const el = document.getElementById("spotlightCard");
@@ -839,6 +865,7 @@ const Jibes = {
             <div class="spotlight-tagline">${b.tagline}</div>
           </div>
         </div>
+        ${this.brandEmblemsHTML(brandName)}
         <p class="spotlight-story">“${b.story}”</p>
         <div class="spotlight-meta">Founded ${b.since} · ${b.hq}</div>
         <div class="spotlight-products">
@@ -885,6 +912,7 @@ const Jibes = {
           <span class="badge-pill" style="background:var(--sand-100); color:var(--ink-500);">${ICONS.check} Sponsored Partner</span>
           <h1 style="margin-top:8px;">${name}</h1>
           <div class="spotlight-tagline">${b.tagline}</div>
+          ${this.brandEmblemsHTML(name)}
           <p class="story">“${b.story}”</p>
           <div class="meta">Founded ${b.since} · ${b.hq} · Screened for the top 9 allergens on every product below</div>
         </div>
