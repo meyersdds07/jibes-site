@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jibes — Allergy-Friendly Buying Guide</title>
+<link rel="icon" type="image/png" href="jibes-logo.png">
+<meta name="description" content="A curated buying guide for the top 9 allergens and health-conscious shoppers, across food, household, personal care, baby, and pet products.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --sand-50:#FAF7F1; --sand-100:#F1ECE1; --card-bg:#FFFFFF;
+  --ink-900:#241B2E; --ink-500:#6B6178; --line:#E2DACD;
+  --plum-900:#352159; --plum-700:#4A2E7A; --plum-600:#5A3993;
+  --fern-600:#336B45; --fern-700:#2A5738; --fern-50:#E8F2E9;
+  --gold-500:#C48A2A; --rose-600:#A63E4E;
+  --chip-peanut-bg:#F6E1E4; --chip-peanut-fg:#8C3A47;
+  --chip-treenut-bg:#EDE4D3; --chip-treenut-fg:#5B4A2E;
+  --chip-dairy-bg:#E3EEF3; --chip-dairy-fg:#356B80;
+  --chip-gluten-bg:#F6E8CB; --chip-gluten-fg:#8A5A12;
+  --chip-soy-bg:#E8F2E9; --chip-soy-fg:#2A5738;
+  --chip-sesame-bg:#EAE6EF; --chip-sesame-fg:#463A5E;
+  --chip-egg-bg:#FBEFD6; --chip-egg-fg:#8A5A12;
+  --chip-fragrance-bg:#EFE6F7; --chip-fragrance-fg:#5A3993;
+  --chip-dye-bg:#F6E1E4; --chip-dye-fg:#A63E4E;
+  --chip-top9-bg:#2A5738; --chip-top9-fg:#FFFFFF;
+  --shadow-sm:0 1px 2px rgba(36,27,46,.06), 0 1px 1px rgba(36,27,46,.04);
+  --shadow-md:0 8px 24px rgba(36,27,46,.12);
+  --radius-s:10px; --radius-m:16px; --radius-l:22px;
+  --font-display:'Fraunces',ui-serif,Georgia,serif;
+  --font-body:'Work Sans',ui-sans-serif,system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --sand-50:#1B1523; --sand-100:#241C30; --card-bg:#2A2136;
+    --ink-900:#F3EFEA; --ink-500:#B7ACC4; --line:#3B3049;
+    --plum-900:#D9C9F5; --plum-700:#9B7FD4; --plum-600:#8467C4;
+    --fern-600:#5FA873; --fern-700:#6FBA84; --fern-50:rgba(95,168,115,.14);
+    --gold-500:#E0AA4E; --rose-600:#DD8B97;
+    --chip-peanut-bg:#3A222A; --chip-peanut-fg:#E7A9B2;
+    --chip-treenut-bg:#332C1E; --chip-treenut-fg:#D8C79E;
+    --chip-dairy-bg:#1E2F36; --chip-dairy-fg:#9FCBDC;
+    --chip-gluten-bg:#332A16; --chip-gluten-fg:#E6C271;
+    --chip-soy-bg:#1E3323; --chip-soy-fg:#8FCC9F;
+    --chip-sesame-bg:#2A2438; --chip-sesame-fg:#C6B9DE;
+    --chip-egg-bg:#332A16; --chip-egg-fg:#E6C271;
+    --chip-fragrance-bg:#2E2440; --chip-fragrance-fg:#C6A9EC;
+    --chip-dye-bg:#3A222A; --chip-dye-fg:#E7A9B2;
+    --chip-top9-bg:#5FA873; --chip-top9-fg:#12261A;
+    --shadow-sm:0 1px 2px rgba(0,0,0,.3); --shadow-md:0 12px 28px rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"]{
+  --sand-50:#1B1523; --sand-100:#241C30; --card-bg:#2A2136;
+  --ink-900:#F3EFEA; --ink-500:#B7ACC4; --line:#3B3049;
+  --plum-900:#D9C9F5; --plum-700:#9B7FD4; --plum-600:#8467C4;
+  --fern-600:#5FA873; --fern-700:#6FBA84; --fern-50:rgba(95,168,115,.14);
+  --gold-500:#E0AA4E; --rose-600:#DD8B97;
+  --chip-peanut-bg:#3A222A; --chip-peanut-fg:#E7A9B2;
+  --chip-treenut-bg:#332C1E; --chip-treenut-fg:#D8C79E;
+  --chip-dairy-bg:#1E2F36; --chip-dairy-fg:#9FCBDC;
+  --chip-gluten-bg:#332A16; --chip-gluten-fg:#E6C271;
+  --chip-soy-bg:#1E3323; --chip-soy-fg:#8FCC9F;
+  --chip-sesame-bg:#2A2438; --chip-sesame-fg:#C6B9DE;
+  --chip-egg-bg:#332A16; --chip-egg-fg:#E6C271;
+  --chip-fragrance-bg:#2E2440; --chip-fragrance-fg:#C6A9EC;
+  --chip-dye-bg:#3A222A; --chip-dye-fg:#E7A9B2;
+  --chip-top9-bg:#5FA873; --chip-top9-fg:#12261A;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.3); --shadow-md:0 12px 28px rgba(0,0,0,.45);
+}
+
+/* ============ BASE ============ */
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--sand-50); color:var(--ink-900);
+  font-family:var(--font-body); font-size:15px; line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:var(--font-display); color:var(--plum-900); margin:0; text-wrap:balance; font-weight:600;}
+a{color:inherit;}
+button{font-family:var(--font-body);}
+img{max-width:100%;}
+svg{width:1em; height:1em;}
+.tabular{font-variant-numeric:tabular-nums;}
+:focus-visible{outline:2px solid var(--fern-600); outline-offset:2px;}
+[hidden]{display:none!important;}
+.wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+@media (max-width:640px){.wrap{padding:0 16px;}}
+button{cursor:pointer;}
+.eyebrow{font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:var(--fern-700); font-weight:700;}
+
+/* ============ SWATCH ART (product "photos") ============ */
+.swatch{position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; border-radius:var(--radius-m); aspect-ratio:1/1; container-type:inline-size;}
+.swatch::before{content:""; position:absolute; inset:0; background-image:radial-gradient(currentColor 1px, transparent 1px); background-size:14px 14px; opacity:.10;}
+.swatch span{font-size:44cqi; line-height:1; position:relative; filter:drop-shadow(0 3px 6px rgba(0,0,0,.15));}
+.sw-snackGold{background:#EFCB80; color:#7A5A18;}
+.sw-tealBev{background:#B9DCD4; color:#1F5C4C;}
+.sw-oliveP{background:#D9DFB6; color:#4B5A22;}
+.sw-blueHouse{background:#C3DCE6; color:#1F4C61;}
+.sw-pinkCare{background:#EFCBD6; color:#7A2E42;}
+.sw-yellowBaby{background:#F5E3A8; color:#6E5410;}
+.sw-orangePet{background:#F0C79E; color:#7A431A;}
+:root[data-theme="dark"] .swatch,
+:root:not([data-theme="light"]) .swatch{filter:brightness(.86) saturate(1.05);}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .swatch{filter:none;}}
+
+/* ============ HEADER ============ */
+header.site{position:sticky; top:0; z-index:40; background:var(--sand-50); border-bottom:1px solid var(--line);}
+.header-row{display:flex; align-items:center; gap:24px; padding:14px 0;}
+.wordmark{display:flex; align-items:center; gap:6px; font-family:var(--font-display); font-weight:700; font-size:26px; color:var(--plum-900); letter-spacing:-.01em; background:none; border:0; padding:0;}
+.wordmark .leaf{color:var(--fern-600); font-size:16px; transform:rotate(-8deg) translateY(-10px);}
+.wordmark .logo-mark{height:30px; width:auto; display:block;}
+.searchbar{flex:1; max-width:520px; display:flex; align-items:center; gap:8px; background:var(--card-bg); border:1px solid var(--line); border-radius:999px; padding:9px 16px;}
+.searchbar input{border:0; outline:0; background:transparent; font:inherit; color:var(--ink-900); flex:1; min-width:0;}
+.searchbar input::placeholder{color:var(--ink-500);}
+.searchbar button{background:none; border:0; color:var(--ink-500); display:flex;}
+.icon-nav{display:flex; align-items:center; gap:22px; margin-left:auto;}
+.icon-btn{display:flex; flex-direction:column; align-items:center; gap:3px; background:none; border:0; color:var(--ink-900); font-size:11px; font-weight:600; position:relative;}
+.icon-btn svg{width:21px; height:21px;}
+.count-badge{position:absolute; top:-6px; right:-10px; background:var(--fern-600); color:#fff; font-size:10px; font-weight:700; border-radius:999px; min-width:16px; height:16px; display:flex; align-items:center; justify-content:center; padding:0 4px;}
+.subnav{display:flex; gap:22px; padding:11px 0; overflow-x:auto; font-size:13.5px; font-weight:600; color:var(--ink-500);}
+.subnav button{background:none;border:0;color:inherit;font:inherit; white-space:nowrap; padding:2px 0; border-bottom:2px solid transparent;}
+.subnav button:hover, .subnav button.is-active{color:var(--plum-900); border-color:var(--fern-600);}
+nav.crumbs{font-size:12.5px; color:var(--ink-500); padding:16px 0 0;}
+nav.crumbs button{background:none;border:0;color:inherit;font:inherit; padding:0;}
+nav.crumbs button:hover{color:var(--plum-900); text-decoration:underline;}
+
+/* ============ BUTTONS ============ */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; border-radius:999px; font-weight:700; font-size:14px; padding:11px 22px; border:1px solid transparent; transition:transform .12s ease;}
+.btn:active{transform:scale(.97);}
+.btn-primary{background:var(--plum-700); color:#fff;}
+.btn-primary:hover{background:var(--plum-600);}
+.btn-green{background:var(--fern-600); color:#fff;}
+.btn-green:hover{background:var(--fern-700);}
+.btn-outline{background:transparent; border-color:var(--line); color:var(--ink-900);}
+.btn-outline:hover{border-color:var(--plum-700); color:var(--plum-700);}
+.btn-sm{padding:8px 16px; font-size:13px;}
+.btn-block{width:100%;}
+.btn[disabled]{opacity:.55; cursor:default;}
+
+/* ============ HERO ============ */
+.hero{padding:40px 0 28px;}
+.hero-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;}
+.hero h1{font-size:clamp(34px,4.4vw,50px); line-height:1.05;}
+.hero p{color:var(--ink-500); font-size:16.5px; max-width:40ch; margin:16px 0 24px;}
+.hero-art{aspect-ratio:16/11; border-radius:var(--radius-l); background:linear-gradient(135deg,#EFCB80,#B9DCD4 60%,#EFCBD6); position:relative; overflow:hidden; box-shadow:var(--shadow-md);}
+.hero-art .emojis{position:absolute; inset:0; display:grid; grid-template-columns:repeat(4,1fr); align-items:center; justify-items:center; font-size:15vw; filter:drop-shadow(0 6px 10px rgba(0,0,0,.18));}
+@media (max-width:820px){.hero-grid{grid-template-columns:1fr;} .hero-art{aspect-ratio:16/9;}}
+
+/* ---- Partner spotlight (paid brand placement, hero "window") ---- */
+.spotlight-card{background:var(--card-bg); border:1px solid var(--line); border-radius:var(--radius-l); padding:22px 24px; box-shadow:var(--shadow-md); display:flex; flex-direction:column; gap:12px;}
+.spotlight-label{display:inline-flex; align-items:center; gap:6px; align-self:flex-start; background:var(--sand-100); color:var(--ink-500); font-size:10.5px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; padding:5px 10px; border-radius:999px;}
+.spotlight-label svg{width:11px; height:11px; flex-shrink:0;}
+.spotlight-top{display:flex; align-items:center; gap:14px;}
+.spotlight-emoji{width:56px; height:56px; border-radius:14px; background:var(--fern-50); display:flex; align-items:center; justify-content:center; font-size:28px; flex-shrink:0;}
+.spotlight-brand{font-family:var(--font-display); font-size:19px; font-weight:600; color:var(--plum-900); line-height:1.15;}
+.spotlight-tagline{font-size:12.5px; color:var(--fern-700); font-weight:600; margin-top:2px;}
+.spotlight-story{font-size:13.5px; color:var(--ink-900); line-height:1.5; font-style:italic; border-left:3px solid var(--fern-600); padding-left:12px; margin:0;}
+.spotlight-meta{font-size:11.5px; color:var(--ink-500);}
+.spotlight-products{display:flex; gap:10px; flex-wrap:wrap;}
+.spot-pchip{display:flex; align-items:center; gap:8px; background:var(--sand-100); border-radius:12px; padding:6px 10px 6px 6px; text-decoration:none; color:var(--ink-900); flex:1; min-width:130px;}
+.spot-pchip .sw{display:block; width:34px; height:34px; border-radius:8px; overflow:hidden; flex-shrink:0;}
+.spot-pchip .tx{font-size:11.5px; line-height:1.25;}
+.spot-pchip .tx b{display:block; font-size:12px;}
+.spotlight-foot{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:2px;}
+.spotlight-dots{display:flex; gap:6px;}
+.spotlight-dots button{width:7px; height:7px; border-radius:50%; border:0; background:var(--line); padding:0;}
+.spotlight-dots button.is-active{background:var(--fern-600); width:16px; border-radius:4px;}
+@media (max-width:820px){.spotlight-card{margin-top:4px;}}
+.brand-hero{display:flex; gap:20px; align-items:center; padding:26px 0; border-bottom:1px solid var(--line); margin-bottom:26px; flex-wrap:wrap;}
+.brand-hero .badge5{width:64px;height:64px;border-radius:16px;background:var(--fern-50);display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0;}
+.brand-hero .story{font-style:italic; color:var(--ink-900); border-left:3px solid var(--fern-600); padding-left:14px; max-width:64ch; margin-top:8px;}
+.brand-hero .meta{font-size:12.5px; color:var(--ink-500); margin-top:8px;}
+
+/* ============ TRUST BAR ============ */
+.trustbar{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius-m); overflow:hidden; margin:26px 0;}
+.trust-item{background:var(--card-bg); display:flex; align-items:center; gap:10px; padding:16px 18px; font-size:13.5px; font-weight:600;}
+.trust-item svg{width:20px; height:20px; color:var(--fern-600); flex-shrink:0;}
+@media (max-width:760px){.trustbar{grid-template-columns:repeat(2,1fr);}}
+
+/* ============ SECTION HEADS ============ */
+.section{padding:34px 0;}
+.section-head{display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:18px;}
+.section-head h2{font-size:23px;}
+.section-head .more{font-size:13px; font-weight:700; color:var(--fern-700); background:none; border:0; white-space:nowrap;}
+
+/* ============ CATEGORY / ALLERGY GRIDS ============ */
+.split-2{display:grid; grid-template-columns:1fr 1fr; gap:34px;}
+@media (max-width:820px){.split-2{grid-template-columns:1fr;}}
+.tile-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px;}
+@media (max-width:520px){.tile-grid{grid-template-columns:repeat(2,1fr);}}
+.cat-tile{background:var(--card-bg); border:1px solid var(--line); border-radius:var(--radius-m); padding:14px; display:flex; flex-direction:column; gap:10px; text-align:left; position:relative;}
+.cat-tile:hover{border-color:var(--plum-700); box-shadow:var(--shadow-sm);}
+.cat-tile .swatch{aspect-ratio:1/1;}
+.cat-tile .label{font-weight:700; font-size:13.5px; display:flex; align-items:center; gap:5px;}
+.cat-tile .label svg{width:13px; height:13px; opacity:.6;}
+.new-flag{position:absolute; top:8px; right:8px; background:var(--gold-500); color:#3A2A05; font-size:9.5px; font-weight:800; letter-spacing:.05em; padding:3px 7px; border-radius:999px;}
+
+.allergy-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; align-content:start;}
+.allergy-chip{display:flex; align-items:center; gap:10px; border-radius:999px; padding:12px 16px; font-weight:700; font-size:13px; border:0; text-align:left;}
+.allergy-chip svg{width:16px; height:16px; flex-shrink:0;}
+.allergy-chip.top9{grid-column:1/-1;}
+
+/* ============ LEARN CARDS ============ */
+.learn-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+@media (max-width:820px){.learn-grid{grid-template-columns:1fr;}}
+.learn-card{border-radius:var(--radius-m); overflow:hidden; border:1px solid var(--line); background:var(--card-bg);}
+.learn-card .art{aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; font-size:42px;}
+.learn-card .body{padding:16px 18px;}
+.learn-card .eyebrow{display:block; margin-bottom:4px;}
+.learn-card h3{font-size:17px; margin-bottom:6px;}
+.learn-card p{color:var(--ink-500); font-size:13.5px; margin:0 0 8px;}
+.learn-card .go{font-size:13px; font-weight:700; color:var(--plum-700);}
+
+/* ============ FOOTER ============ */
+footer.site{border-top:1px solid var(--line); margin-top:40px; padding:36px 0 28px; background:var(--sand-100);}
+.foot-grid{display:grid; grid-template-columns:1.4fr repeat(3,1fr); gap:24px; font-size:13px;}
+@media (max-width:760px){.foot-grid{grid-template-columns:1fr 1fr;}}
+.foot-grid h4{font-family:var(--font-body); font-weight:700; font-size:12.5px; color:var(--ink-900); margin-bottom:10px; text-transform:uppercase; letter-spacing:.04em;}
+.foot-grid ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:7px; color:var(--ink-500);}
+.foot-bottom{margin-top:28px; padding-top:18px; border-top:1px solid var(--line); font-size:12px; color:var(--ink-500); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+
+/* ============ LAYOUT: CATEGORY / LISTING ============ */
+.page-head{padding:18px 0 6px;}
+.page-head h1{font-size:32px;}
+.page-head p{color:var(--ink-500); max-width:56ch; margin:8px 0 0;}
+.icon-row{display:flex; gap:22px; flex-wrap:wrap; padding:18px 0 26px; border-bottom:1px solid var(--line); margin-bottom:26px;}
+.icon-row .it{display:flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600; color:var(--ink-500);}
+.icon-row svg{width:16px; height:16px; color:var(--fern-600);}
+
+.layout-2col{display:grid; grid-template-columns:220px 1fr; gap:34px; align-items:start;}
+@media (max-width:820px){.layout-2col{grid-template-columns:1fr;}}
+.filter-rail h4{font-family:var(--font-body); font-weight:700; font-size:13px; color:var(--plum-900); margin-bottom:10px;}
+.rail-links{list-style:none; margin:0 0 22px; padding:0; display:flex; flex-direction:column; gap:2px; font-size:13.5px;}
+.rail-links button{display:block; width:100%; text-align:left; background:none; border:0; color:var(--ink-500); padding:6px 8px; border-radius:8px; font:inherit;}
+.rail-links button:hover{background:var(--sand-100); color:var(--ink-900);}
+.rail-links button.is-active{background:var(--fern-50); color:var(--fern-700); font-weight:700;}
+.filter-group{border-top:1px solid var(--line); padding:12px 0;}
+.filter-group summary{cursor:pointer; font-weight:700; font-size:12.5px; color:var(--ink-900); list-style:none; display:flex; justify-content:space-between;}
+.filter-group summary::-webkit-details-marker{display:none;}
+.filter-group summary::after{content:"+"; color:var(--ink-500); font-weight:400;}
+.filter-group[open] summary::after{content:"–";}
+.filter-opt{display:flex; align-items:center; gap:8px; font-size:13px; padding:6px 0; color:var(--ink-500);}
+.clear-filters{background:none; border:0; color:var(--fern-700); font-weight:700; font-size:12.5px; padding:10px 8px 0;}
+
+.tile-grid.subcats{grid-template-columns:repeat(4,1fr);}
+.subcat-tile{background:var(--card-bg); border:1px solid var(--line); border-radius:var(--radius-m); padding:14px; text-align:left;}
+.subcat-tile:hover{border-color:var(--plum-700);}
+.subcat-tile .swatch{margin-bottom:10px;}
+.subcat-tile .n{display:block; font-weight:700; font-size:13.5px;}
+.subcat-tile .c{display:block; font-size:12px; color:var(--ink-500); margin-top:2px;}
+.promo-banner{margin-top:26px; background:var(--fern-50); border-radius:var(--radius-m); padding:20px 24px; display:flex; align-items:center; gap:18px; flex-wrap:wrap;}
+.promo-banner .badge5{width:52px; height:52px; border-radius:50%; background:var(--fern-600); color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; font-weight:800; line-height:1; flex-shrink:0;}
+.promo-banner .badge5 b{font-size:20px;}
+.promo-banner .badge5 i{font-style:normal; font-size:8px; letter-spacing:.03em;}
+.promo-banner .txt{flex:1; min-width:220px;}
+.promo-banner h3{font-size:16px; margin-bottom:4px;}
+.promo-checks{display:flex; gap:14px; flex-wrap:wrap; font-size:12.5px; color:var(--fern-700); font-weight:700;}
+
+/* ============ LISTING TOOLBAR + PRODUCT GRID ============ */
+.listing-toolbar{display:flex; align-items:center; justify-content:space-between; gap:14px; margin-bottom:16px; flex-wrap:wrap;}
+.listing-toolbar .count{font-size:13px; color:var(--ink-500);}
+.sortbox{display:flex; align-items:center; gap:10px;}
+select{font:inherit; border:1px solid var(--line); background:var(--card-bg); color:var(--ink-900); border-radius:8px; padding:7px 10px;}
+.product-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+@media (max-width:900px){.product-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:520px){.product-grid{grid-template-columns:1fr;}}
+.pcard{background:var(--card-bg); border:1px solid var(--line); border-radius:var(--radius-m); padding:12px; display:flex; flex-direction:column; position:relative; text-align:left;}
+.pcard:hover{border-color:var(--plum-700); box-shadow:var(--shadow-sm);}
+.pcard .fav{position:absolute; top:20px; right:20px; background:var(--card-bg); border:1px solid var(--line); border-radius:50%; width:30px; height:30px; display:flex; align-items:center; justify-content:center; color:var(--ink-500); z-index:2;}
+.pcard .fav svg{width:15px; height:15px;}
+.pcard .fav.is-fav{color:var(--rose-600); border-color:var(--rose-600);}
+.pcard .fav.is-fav svg{fill:var(--rose-600);}
+.pcard .imglink{display:block;}
+.pcard .brand{font-size:11.5px; font-weight:700; color:var(--ink-500); text-transform:uppercase; letter-spacing:.03em; margin-top:12px;}
+.pcard .name{font-size:14px; font-weight:600; margin:3px 0 6px; line-height:1.3;}
+.pcard .name a{text-decoration:none;}
+.pcard .name a:hover{color:var(--plum-700);}
+.rating{display:flex; align-items:center; gap:5px; font-size:12px; color:var(--ink-500);}
+.rating .stars{color:var(--gold-500); letter-spacing:1px; font-size:11px;}
+.pcard .price{font-family:var(--font-display); font-weight:600; font-size:17px; margin:8px 0 10px;}
+.pcard .addcart{margin-top:auto;}
+.buyrow{display:flex; gap:6px; margin-top:auto;}
+.buy-btn{flex:1; display:flex; align-items:center; justify-content:center; gap:5px; border-radius:999px; font-weight:700; font-size:11.5px; padding:8px 6px; border:1px solid var(--line); background:var(--sand-100); color:var(--ink-900); text-decoration:none;}
+.buy-btn:hover{border-color:var(--plum-700); color:var(--plum-700);}
+.buy-btn.primary{background:var(--fern-600); border-color:var(--fern-600); color:#fff;}
+.buy-btn.primary:hover{background:var(--fern-700); color:#fff;}
+.buy-btn svg{width:11px; height:11px; flex-shrink:0;}
+.pdp-buybox{border:1px solid var(--fern-600); background:var(--fern-50); border-radius:var(--radius-m); padding:18px 20px; margin-bottom:20px;}
+.pdp-buybox h3{font-size:13px; color:var(--fern-700); margin-bottom:3px; display:flex; align-items:center; gap:7px;}
+.pdp-buybox h3 svg{width:15px; height:15px; flex-shrink:0;}
+.pdp-buybox .sub{font-size:12px; color:var(--ink-500); margin-bottom:14px;}
+.afflabel{font-size:10.5px; color:var(--ink-500); margin:2px 0 7px; display:flex; align-items:center; gap:4px;}
+.afflabel svg{width:10px; height:10px; flex-shrink:0;}
+.pdp-buy-list{display:flex; flex-direction:column; gap:8px;}
+.pdp-buy-row{display:flex; align-items:center; justify-content:space-between; gap:12px; background:var(--card-bg); border:1px solid var(--line); border-radius:12px; padding:11px 14px;}
+.pdp-buy-row .who{font-weight:700; font-size:13.5px;}
+.pdp-buy-row .note{font-size:11.5px; color:var(--ink-500);}
+.pdp-buy-row a.btn{padding:8px 16px; font-size:12.5px;}
+.pdp-buy-row a.btn svg{width:11px; height:11px;}
+.chiprow{display:flex; flex-wrap:wrap; gap:5px; margin:2px 0 8px;}
+.mini-chip{font-size:10px; font-weight:700; padding:3px 7px; border-radius:999px;}
+.empty-aisle{padding:50px 20px; text-align:center; color:var(--ink-500); border:1px dashed var(--line); border-radius:var(--radius-m);}
+.empty-aisle .e{font-size:34px; margin-bottom:10px;}
+
+/* ============ PRODUCT DETAIL ============ */
+.pdp-top{display:grid; grid-template-columns:1fr 1fr; gap:44px; padding:22px 0 30px;}
+@media (max-width:820px){.pdp-top{grid-template-columns:1fr; gap:22px;}}
+.pdp-gallery .main-swatch{aspect-ratio:1/1;}
+.thumb-row{display:flex; gap:8px; margin-top:10px;}
+.thumb{width:56px; height:56px; border-radius:10px; border:2px solid transparent; padding:0; overflow:hidden;}
+.thumb.is-active{border-color:var(--plum-700);}
+.thumb .swatch{aspect-ratio:1/1;}
+.pdp-info .brandlink{font-size:12.5px; font-weight:700; color:var(--fern-700); text-transform:uppercase; letter-spacing:.03em;}
+.pdp-info h1{font-size:26px; margin:6px 0 8px;}
+.pdp-info .rating{font-size:13px; margin-bottom:12px;}
+.pdp-info .price{font-family:var(--font-display); font-size:28px; font-weight:600; margin:6px 0 16px;}
+.qty-row{display:flex; align-items:center; gap:14px; margin-bottom:14px;}
+.stepper{display:flex; align-items:center; border:1px solid var(--line); border-radius:999px; overflow:hidden;}
+.stepper button{width:34px; height:34px; background:none; border:0; font-size:16px; color:var(--ink-900);}
+.stepper button:hover{background:var(--sand-100);}
+.stepper .qv{width:34px; text-align:center; font-weight:700;}
+.pdp-cta{display:flex; gap:12px; margin-bottom:20px; flex-wrap:wrap;}
+.badge-row{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:6px;}
+.badge-pill{display:flex; align-items:center; gap:6px; font-size:11.5px; font-weight:700; padding:6px 11px; border-radius:999px;}
+.badge-pill svg{width:13px; height:13px;}
+.detail-panels{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:8px;}
+@media (max-width:700px){.detail-panels{grid-template-columns:1fr;}}
+.panel{border:1px solid var(--line); border-radius:var(--radius-m); padding:18px 20px; background:var(--card-bg);}
+.panel h3{font-size:14px; margin-bottom:9px;}
+.panel p, .panel li{font-size:13.5px; color:var(--ink-500);}
+.panel ul{margin:0; padding-left:18px;}
+.panel.allergen{grid-column:1/-1; background:var(--fern-50); border-color:var(--fern-600);}
+.panel.allergen h3{color:var(--fern-700); display:flex; align-items:center; gap:8px;}
+.panel.allergen h3 svg{width:15px; height:15px; flex-shrink:0;}
+.panel.allergen p{color:var(--ink-900);}
+.simple-flag{display:inline-flex; align-items:center; gap:6px; background:var(--fern-600); color:#fff; font-size:12px; font-weight:700; padding:5px 11px; border-radius:999px; margin-top:8px;}
+.simple-flag svg{width:12px; height:12px; flex-shrink:0;}
+
+.reviews-block{display:grid; grid-template-columns:220px 1fr; gap:28px; padding:26px; border:1px solid var(--line); border-radius:var(--radius-m); margin:26px 0;}
+@media (max-width:700px){.reviews-block{grid-template-columns:1fr;}}
+.rv-score{text-align:center;}
+.rv-score .n{font-family:var(--font-display); font-size:44px; font-weight:600;}
+.rv-score .stars{color:var(--gold-500); font-size:16px; letter-spacing:2px; margin:4px 0;}
+.rv-score .c{font-size:12.5px; color:var(--ink-500);}
+.bar-row{display:grid; grid-template-columns:44px 1fr 30px; align-items:center; gap:10px; font-size:12.5px; color:var(--ink-500); margin-bottom:6px;}
+.bar-track{height:7px; border-radius:999px; background:var(--sand-100); overflow:hidden;}
+.bar-fill{height:100%; background:var(--gold-500);}
+
+.rail-row{display:flex; gap:16px; overflow-x:auto; padding-bottom:6px;}
+.rail-row .pcard{min-width:190px; flex:0 0 190px;}
+
+
+/* ============ TOAST ============ */
+.toast{position:fixed; left:50%; bottom:26px; transform:translateX(-50%) translateY(10px); background:var(--plum-900); color:#fff; padding:12px 20px; border-radius:999px; font-size:13.5px; font-weight:600; box-shadow:var(--shadow-md); z-index:80; opacity:0; pointer-events:none; transition:opacity .18s ease, transform .18s ease;}
+.toast.is-show{opacity:1; transform:translateX(-50%) translateY(0);}
+
+@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important; transition-duration:0.01ms!important;}}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap header-row">
+    <button class="wordmark" onclick="Jibes.nav('home')" aria-label="Jibes home"><img src="jibes-logo.png" alt="" class="logo-mark">Jibes</button>
+    <form class="searchbar" onsubmit="return Jibes.submitSearch(event)">
+      <input id="searchInput" type="search" placeholder="Search products" aria-label="Search products">
+      <button type="submit" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" width="18" height="18"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </form>
+    <nav class="icon-nav">
+      <button class="icon-btn" onclick="Jibes.toast('Accounts aren’t wired up in this prototype yet.')">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 20c1.8-4 5-6 8-6s6.2 2 8 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Account
+      </button>
+      <button class="icon-btn" onclick="Jibes.nav('favorites')">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7.5-4.6-10-9.3C.4 7 2 3.5 5.6 3c2.1-.3 4 .8 6.4 3.4C14.4 3.8 16.3 2.7 18.4 3c3.6.5 5.2 4 3.6 7.7C19.5 15.4 12 20 12 20Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        Favorites<span class="count-badge" id="favCount" hidden>0</span>
+      </button>
+    </nav>
+  </div>
+  <div class="wrap subnav" id="topSubnav"></div>
+</header>
+
+<main class="wrap" id="app"></main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <button class="wordmark" style="font-size:20px;" onclick="Jibes.nav('home')"><img src="jibes-logo.png" alt="" class="logo-mark" style="height:24px;">Jibes</button>
+        <p style="color:var(--ink-500); font-size:13px; max-width:34ch; margin:10px 0 0;">A curated store of picks that jibe with your allergies — carefully vetted, so shopping never has to feel like guesswork.</p>
+      </div>
+      <div>
+        <h4>Customer Care</h4>
+        <ul><li>Contact Us</li><li>Shipping &amp; Returns</li><li>FAQs</li><li>Accessibility</li></ul>
+      </div>
+      <div>
+        <h4>Reviews</h4>
+        <ul><li>4.8 ★ from 2,500+ reviews</li><li>"Makes it so easy to trust products I buy." — verified shopper</li></ul>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <ul><li>Join a community that shares tips, recipes, and support</li><li>Join the Community →</li></ul>
+      </div>
+    </div>
+    <p style="font-size:12px; color:var(--ink-500); max-width:70ch; margin:22px 0 0;">Affiliate Disclosure: Jibes may earn a commission when you buy through links to our retail partners, at no extra cost to you. Commission never affects which products we feature or how we screen them for allergens.</p>
+    <div class="foot-bottom">
+      <span>© 2026 Jibes. All rights reserved.</span>
+      <span>Design prototype — product data and buy links are illustrative</span>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* =========================================================
+   JIBES PROTOTYPE — data + render + interaction
+   ========================================================= */
+const ALLERGENS = {
+  peanut:    {label:"Peanut-Free",    icon:"peanut"},
+  treenut:   {label:"Tree Nut-Free",  icon:"nut"},
+  dairy:     {label:"Dairy-Free",     icon:"drop"},
+  gluten:    {label:"Gluten-Free",    icon:"wheat"},
+  soy:       {label:"Soy-Free",       icon:"leaf2"},
+  sesame:    {label:"Sesame-Free",    icon:"dots"},
+  egg:       {label:"Egg-Free",       icon:"egg"},
+  fragrance: {label:"Fragrance-Free", icon:"flask"},
+  dye:       {label:"Dye-Free",       icon:"nodye"},
+  top9:      {label:"Top 9 Allergen-Free", icon:"shield"},
+};
+
+const ICONS = {
+  peanut:'<svg viewBox="0 0 24 24" fill="none"><path d="M9 3c-3 0-5 3-4 6 .6 1.8-.3 2.6-.9 4.4-1 3 1 6.6 4.9 6.6 3 0 5-2 5.3-4.5.3-2.3-.6-3-.3-5.3.4-2.8 3-4.2 1.6-6.6C14.5 2 12 3 9 3Z" stroke="currentColor" stroke-width="1.6"/><path d="M8 15c1.5 1 4 1 5.5-.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+  nut:'<svg viewBox="0 0 24 24" fill="none"><path d="M12 3C7 3 4 8 4 13c0 4.5 3.5 8 8 8s8-3.5 8-8c0-5-3-10-8-10Z" stroke="currentColor" stroke-width="1.6"/><path d="M12 3v18M12 9c-2 0-3.5 1.6-3.5 3.6M12 9c2 0 3.5 1.6 3.5 3.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>',
+  drop:'<svg viewBox="0 0 24 24" fill="none"><path d="M12 3s7 8 7 12.5a7 7 0 1 1-14 0C5 11 12 3 12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>',
+  wheat:'<svg viewBox="0 0 24 24" fill="none"><path d="M12 21V6M12 6l-3-3M12 6l3-3M9 9l-3-2M15 9l3-2M9 12l-3-2M15 12l3-2M9 15l-3-2M15 15l3-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  leaf2:'<svg viewBox="0 0 24 24" fill="none"><path d="M5 19C4 10 10 4 19 5c1 9-5 15-14 14Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M5 19c3-5 6-8 12-12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>',
+  dots:'<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="7" cy="8" r="1.6"/><circle cx="12" cy="6" r="1.6"/><circle cx="17" cy="8" r="1.6"/><circle cx="7" cy="14" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="17" cy="14" r="1.6"/><circle cx="9" cy="19" r="1.6"/><circle cx="15" cy="19" r="1.6"/></svg>',
+  egg:'<svg viewBox="0 0 24 24" fill="none"><path d="M12 3C8 8 5 13 5 16.5A7 7 0 0 0 19 16.5C19 13 16 8 12 3Z" stroke="currentColor" stroke-width="1.6"/></svg>',
+  flask:'<svg viewBox="0 0 24 24" fill="none"><path d="M10 3h4M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>',
+  nodye:'<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M6.5 6.5l11 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+  shield:'<svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  leaf:'<svg viewBox="0 0 24 24" fill="none"><path d="M5 19C4 10 10 4 19 5c1 9-5 15-14 14Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
+  truck:'<svg viewBox="0 0 24 24" fill="none"><path d="M3 7h11v9H3zM14 11h4l3 3v2h-7z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="7.5" cy="18" r="1.7" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="18" r="1.7" stroke="currentColor" stroke-width="1.5"/></svg>',
+  compare:'<svg viewBox="0 0 24 24" fill="none"><path d="M7 3v14M7 17l-3-3M7 17l3-3M17 21V7M17 7l-3 3M17 7l3 3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  external:'<svg viewBox="0 0 24 24" fill="none"><path d="M9 6h9v9M18 6L7 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  check:'<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  heart:'<svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7.5-4.6-10-9.3C.4 7 2 3.5 5.6 3c2.1-.3 4 .8 6.4 3.4C14.4 3.8 16.3 2.7 18.4 3c3.6.5 5.2 4 3.6 7.7C19.5 15.4 12 20 12 20Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
+};
+
+// ---- Categories ----
+const CATEGORIES = [
+  {id:"food", label:"Food", emoji:"🥣", swatch:"snackGold",
+    subcats:[
+      {id:"snacks", label:"Snacks", count:845},
+      {id:"beverages", label:"Beverages", count:512},
+      {id:"pantry-staples", label:"Pantry Staples", count:1245},
+      {id:"breakfast", label:"Breakfast", count:625},
+      {id:"baking-flour", label:"Baking & Flour", count:534},
+      {id:"canned-goods", label:"Canned Goods", count:678},
+      {id:"condiments-sauces", label:"Condiments & Sauces", count:842},
+      {id:"pasta-grains", label:"Pasta & Grains", count:736},
+      {id:"frozen-foods", label:"Frozen Foods", count:412},
+      {id:"kids-foods", label:"Kids' Foods", count:318},
+      {id:"protein-plant-based", label:"Protein & Plant-Based", count:688},
+    ]},
+  {id:"household", label:"Household", emoji:"🧴", swatch:"blueHouse",
+    subcats:[
+      {id:"cleaning-supplies", label:"Cleaning Supplies", count:214},
+      {id:"laundry", label:"Laundry", count:96},
+      {id:"paper-products", label:"Paper Products", count:58},
+      {id:"dish-soap", label:"Dish Soap", count:41},
+    ]},
+  {id:"personal-care", label:"Personal Care", emoji:"🧼", swatch:"pinkCare",
+    subcats:[
+      {id:"skin-care", label:"Skin Care", count:302},
+      {id:"hair-care", label:"Hair Care", count:188},
+      {id:"oral-care", label:"Oral Care", count:74},
+      {id:"deodorant", label:"Deodorant", count:52},
+    ]},
+  {id:"baby-kids", label:"Baby & Kids", emoji:"🧸", swatch:"yellowBaby",
+    subcats:[
+      {id:"baby-food", label:"Baby Food", count:120},
+      {id:"kids-snacks", label:"Kids' Snacks", count:96},
+      {id:"diapers-wipes", label:"Diapers & Wipes", count:44},
+    ]},
+  {id:"pet-products", label:"Pet Products", emoji:"🐶", swatch:"orangePet",
+    subcats:[
+      {id:"dog-food", label:"Dog Food", count:88},
+      {id:"cat-food", label:"Cat Food", count:63},
+      {id:"treats", label:"Treats", count:52},
+    ]},
+  {id:"fragrance-free", label:"Fragrance-Free Essentials", emoji:"🌿", swatch:"blueHouse", collection:"fragrance"},
+  {id:"five-ingredients", label:"5 Ingredients or Less", emoji:"🍃", swatch:"oliveP", collection:"simple", isNew:true},
+];
+
+// ---- Products ----
+const PRODUCTS = [
+ {id:"lesserevil-popcorn", brand:"LesserEvil", name:"Himalayan Pink Salt Popcorn", size:"5 oz", category:"food", subcat:"snacks", price:3.99, rating:4.6, reviews:128, emoji:"🍿", sw:"snackGold", free:["gluten","dairy","egg","soy","peanut","treenut","sesame","top9"], vegan:true, nonGmo:true, simple:3,
+  ingredients:["Organic Popcorn","Organic Avocado Oil","Himalayan Pink Salt"],
+  desc:"Organic popcorn, air-popped light and finished with a touch of Himalayan pink salt — a better-for-you snack with nothing to hide.",
+  brandNote:"LesserEvil started in a small garage with one mission: make clean, organic snacks that taste amazing and do good. Simple ingredients, better for you, better for farmers, better for the planet.",
+  allergenNote:"Made in a facility that does not process peanuts, tree nuts, dairy, egg, soy, wheat, fish or shellfish."},
+ {id:"hippeas-puffs", brand:"HIPPEAS", name:"Chickpea Puffs, Sea Salt", size:"4 oz", category:"food", subcat:"snacks", price:3.49, rating:4.5, reviews:92, emoji:"🫛", sw:"snackGold", free:["gluten","dairy","egg","peanut","treenut","top9"], vegan:true,
+  ingredients:["Chickpea Flour","Sunflower Oil","Sea Salt","Nutritional Yeast"],
+  desc:"Crunchy chickpea puffs with a light sea-salt finish — plant-powered protein in every handful.",
+  brandNote:"HIPPEAS turns chickpeas into feel-good snacks, working with farmers to grow chickpeas responsibly.",
+  allergenNote:"Made in a dedicated facility free of the top 9 allergens; always check the current label before purchase."},
+ {id:"simplemills-crackers", brand:"Simple Mills", name:"Almond Flour Crackers, Farmhouse Cheddar", size:"4.25 oz", category:"food", subcat:"snacks", price:4.99, rating:4.4, reviews:328, emoji:"🍘", sw:"snackGold", free:["gluten","soy"], grainFree:true,
+  ingredients:["Almond Flour","Sunflower Oil","Cheddar Cheese (Milk)","Sea Salt","Tomato","Onion","Rosemary Extract"],
+  desc:"Grain-free crackers baked with almond flour and real cheddar for a savory, satisfying crunch.",
+  brandNote:"Simple Mills bakes with nutrient-dense ingredients like almond flour instead of refined grains.",
+  allergenNote:"Contains tree nuts (almond) and dairy — not suitable for tree-nut or dairy allergies."},
+ {id:"biena-chickpea", brand:"Biena", name:"Chickpea Snacks, Sea Salt", size:"5 oz", category:"food", subcat:"snacks", price:3.29, rating:4.5, reviews:84, emoji:"🫘", sw:"snackGold", free:["gluten","dairy","egg","peanut","treenut","top9"], vegan:true, simple:4,
+  ingredients:["Chickpeas","Sunflower Oil","Sea Salt","Rice Flour"],
+  desc:"Roasted chickpeas with a satisfying crunch and 4g of plant protein per serving.",
+  brandNote:"Biena roasts and seasons chickpeas in small batches for a snack that's high in protein and fiber.",
+  allergenNote:"Made in a facility that does not process peanuts, tree nuts, dairy, egg, wheat, fish or shellfish."},
+ {id:"thatsit-bar", brand:"That's It.", name:"Fruit Bars, Apple + Blueberry (5-ct)", size:"5 bars", category:"food", subcat:"snacks", price:4.49, rating:4.6, reviews:212, emoji:"🍎", sw:"snackGold", free:["gluten","dairy","egg","peanut","treenut","soy","top9"], vegan:true, simple:2,
+  ingredients:["Apples","Blueberries"],
+  desc:"Just two ingredients, pressed into a chewy fruit bar — no added sugar, ever.",
+  brandNote:"That's It. makes fruit bars from real fruit and absolutely nothing else.",
+  allergenNote:"Made in a facility that does not process the top 9 allergens."},
+ {id:"boomchicka-kettlecorn", brand:"Boom Chicka Pop", name:"Light Kettle Corn", size:"4.4 oz", category:"food", subcat:"snacks", price:4.49, rating:4.4, reviews:183, emoji:"🍿", sw:"snackGold", free:["gluten","dairy","egg","peanut","treenut","top9"], nonGmo:true,
+  ingredients:["Popcorn","Sugar","Sunflower Oil","Sea Salt"],
+  desc:"The classic sweet-and-salty kettle corn crunch, made with simple, whole ingredients.",
+  brandNote:"Boom Chicka Pop pops real corn kernels into snacks free from artificial flavors and preservatives.",
+  allergenNote:"Made in a facility that does not process peanuts, tree nuts, dairy, egg, wheat, fish or shellfish."},
+ {id:"quinn-popcorn", brand:"Quinn", name:"Sea Salt Popcorn", size:"4.4 oz", category:"food", subcat:"snacks", price:3.99, rating:4.5, reviews:156, emoji:"🍿", sw:"snackGold", free:["gluten","dairy","egg","peanut","treenut","soy","top9"], nonGmo:true, simple:3,
+  ingredients:["Popcorn","Sunflower Oil","Sea Salt"],
+  desc:"Kettle-popped with sunflower oil for a clean, buttery-tasting crunch, no artificial anything.",
+  brandNote:"Quinn snacks are made from scratch with ingredients you can pronounce.",
+  allergenNote:"Made in a facility that does not process the top 9 allergens."},
+ {id:"pipcorn-heirloom", brand:"Pipcorn", name:"Heirloom Popcorn", size:"4.5 oz", category:"food", subcat:"snacks", price:3.79, rating:4.6, reviews:204, emoji:"🌽", sw:"snackGold", free:["gluten","dairy","egg","peanut","treenut","soy","top9"], nonGmo:true, simple:4,
+  ingredients:["Heirloom Popcorn","Sunflower Oil","Sea Salt","Nutritional Yeast (select flavors)"],
+  desc:"Small heirloom kernels pop up extra tender — less hull, more crunch.",
+  brandNote:"Pipcorn grows heirloom corn varieties for a smaller, more delicate popcorn kernel.",
+  allergenNote:"Made in a facility that does not process the top 9 allergens."},
+ {id:"healthade-kombucha", brand:"Health-Ade", name:"Kombucha, Ginger Lemon", size:"16 oz", category:"food", subcat:"beverages", price:3.99, rating:4.3, reviews:310, emoji:"🍋", sw:"tealBev", free:["gluten","dairy","egg","peanut","treenut","soy","top9"], vegan:true,
+  ingredients:["Kombucha Culture","Filtered Water","Cane Sugar","Ginger","Lemon Juice"],
+  desc:"Small-batch brewed kombucha with a bright ginger-lemon bite.",
+  brandNote:"Health-Ade brews kombucha the slow way, in glass, for six to eight weeks.",
+  allergenNote:"Made in a facility that does not process the top 9 allergens."},
+ {id:"jovial-pasta", brand:"Jovial", name:"Gluten Free Pasta Elbows", size:"12 oz", category:"food", subcat:"pasta-grains", price:5.49, rating:4.5, reviews:267, emoji:"🍝", sw:"snackGold", free:["gluten","dairy","egg","peanut","treenut","soy"], vegan:true,
+  ingredients:["Organic Brown Rice Flour","Water"],
+  desc:"Bronze-cut brown rice pasta with a texture close to traditional wheat pasta.",
+  brandNote:"Jovial makes gluten-free pasta from organic Italian brown rice, stone-milled and bronze-cut.",
+  allergenNote:"Made in a dedicated gluten-free facility; always check current packaging for allergen details."},
+ {id:"nutiva-coconutoil", brand:"Nutiva", name:"Organic Coconut Oil", size:"29 oz", category:"food", subcat:"pantry-staples", price:10.99, rating:4.7, reviews:512, emoji:"🥥", sw:"snackGold", free:["gluten","dairy","egg","peanut","treenut","soy","sesame","top9"], vegan:true, simple:1,
+  ingredients:["Organic Virgin Coconut Oil"],
+  desc:"Cold-pressed, unrefined coconut oil for cooking, baking, and skin-safe uses alike.",
+  brandNote:"Nutiva sources organic coconut through fair-trade partnerships with small farms.",
+  allergenNote:"Made in a facility that does not process the top 9 allergens."},
+ {id:"mrsmeyers-soap", brand:"Mrs. Meyer's Clean Day", name:"Hand Soap, Basil", size:"12.5 oz", category:"household", subcat:"dish-soap", price:4.29, rating:4.6, reviews:890, emoji:"🧴", sw:"blueHouse", free:["gluten","dairy","egg","peanut","treenut","soy","top9"], plantDerived:true,
+  ingredients:["Purified Water","Plant-Derived Cleaning Agents","Basil Essential Oil Blend","Salt","Citric Acid"],
+  desc:"A garden-fresh basil hand soap made with plant-derived cleaning ingredients.",
+  brandNote:"Mrs. Meyer's blends garden-inspired scents with plant-derived, biodegradable formulas.",
+  allergenNote:"Naturally scented with essential oils — not fragrance-free. Free of the top 9 food allergens."},
+ {id:"attitude-detergent", brand:"ATTITUDE", name:"Laundry Detergent, Unscented", size:"70.5 oz / 118 loads", category:"household", subcat:"laundry", price:15.99, rating:4.5, reviews:421, emoji:"🧺", sw:"blueHouse", free:["gluten","dairy","egg","peanut","treenut","soy","top9","fragrance","dye"],
+  ingredients:["Plant- and Mineral-Based Cleaning Agents","Water Softeners","Enzymes"],
+  desc:"Unscented, dye-free laundry detergent for sensitive skin and fragrance-free households.",
+  brandNote:"ATTITUDE formulates household products with EWG-verified, plant- and mineral-based ingredients.",
+  allergenNote:"Free of fragrance and dyes, and of the top 9 food allergens."},
+ {id:"attitude-lotion", brand:"ATTITUDE", name:"Fragrance-Free Body Lotion", size:"16 oz", category:"personal-care", subcat:"skin-care", price:12.99, rating:4.4, reviews:198, emoji:"🧴", sw:"pinkCare", free:["gluten","dairy","egg","peanut","treenut","soy","top9","fragrance","dye"],
+  ingredients:["Water","Shea Butter","Sunflower Seed Oil","Glycerin","Xanthan Gum"],
+  desc:"A lightweight, fragrance-free lotion formulated for sensitive skin.",
+  brandNote:"ATTITUDE designs skin care with EWG-verified formulas and full ingredient transparency.",
+  allergenNote:"Free of fragrance, dyes, and the top 9 food allergens."},
+ {id:"babyganics-dishsoap", brand:"Babyganics", name:"Fragrance Free Dish Soap", size:"16 oz", category:"household", subcat:"dish-soap", price:5.49, rating:4.3, reviews:122, emoji:"🧽", sw:"blueHouse", free:["gluten","dairy","egg","peanut","treenut","soy","top9","fragrance","dye"],
+  ingredients:["Water","Plant-Derived Surfactants","Glycerin","Citric Acid"],
+  desc:"A plant-based dish soap with no added fragrance or dyes — gentle on hands, tough on grease.",
+  brandNote:"Babyganics formulates household essentials with baby-safe, plant-derived ingredients.",
+  allergenNote:"Free of fragrance, dyes, and the top 9 food allergens."},
+ {id:"onceuponfarm-pouch", brand:"Once Upon a Farm", name:"Organic Baby Food Pouch, Peach & Oat", size:"3.2 oz", category:"baby-kids", subcat:"baby-food", price:2.29, rating:4.6, reviews:340, emoji:"🍑", sw:"yellowBaby", free:["dairy","egg","peanut","treenut","soy","top9"],
+  ingredients:["Organic Peaches","Organic Oats","Organic Apples"],
+  desc:"Cold-pressed organic peach and oat blend with no added sugar.",
+  brandNote:"Once Upon a Farm makes cold-pressed baby food from organic, farm-fresh produce.",
+  allergenNote:"Made in a facility that does not process peanuts, tree nuts, dairy, egg, or soy."},
+ {id:"openfarm-dogfood", brand:"Open Farm", name:"Grain-Free Dog Food, Ancestral Blend", size:"4 lb", category:"pet-products", subcat:"dog-food", price:54.99, rating:4.7, reviews:176, emoji:"🐾", sw:"orangePet", free:["gluten","dairy","egg","peanut","treenut","soy","top9"], vegan:false,
+  ingredients:["Cage-Free Chicken","Pumpkin","Chickpeas","Wild-Caught Salmon Oil"],
+  desc:"A grain-free recipe made with humanely-raised chicken and traceable ingredients.",
+  brandNote:"Open Farm partners with certified humane farms and shares traceability for every ingredient.",
+  allergenNote:"Formulated without gluten, dairy, egg, peanut, tree nut, or soy ingredients."},
+];
+
+// ---- Sponsored brand partners (paid placement — proof of concept) ----
+// This is the monetization idea: small allergen-free brands rarely have big marketing
+// budgets. Instead of only a listing, Jibes sells a paid "Spotlight" that pairs their
+// founder story with 2 featured products, rotating through the homepage hero window.
+const BRANDS = {
+  "LesserEvil": {tagline:"Clean, organic snacks with nothing to hide", story:"We started in a small garage with one mission: make clean, organic snacks that taste amazing and do good. Simple ingredients, better for you, better for farmers, better for the planet.", since:"2004", hq:"Danbury, CT", emoji:"🍿"},
+  "HIPPEAS": {tagline:"Chickpea snacks with a conscience", story:"We turn chickpeas into feel-good snacks, working with farmers to grow them responsibly — proving plant-powered can still be seriously crave-able.", since:"2016", hq:"Venice, CA", emoji:"🫛"},
+  "That's It.": {tagline:"Two ingredients. Zero compromises.", story:"We make fruit bars from real fruit and absolutely nothing else — no added sugar, no fillers, just fruit pressed into something you can actually trust.", since:"2010", hq:"Miami, FL", emoji:"🍎"},
+  "Nutiva": {tagline:"Organic pantry staples, sourced responsibly", story:"We source organic coconut and superfoods through fair-trade partnerships with small farms, bringing clean pantry staples to more kitchens.", since:"1999", hq:"Richmond, CA", emoji:"🥥"},
+};
+const SPOTLIGHT_ORDER = Object.keys(BRANDS);
+
+// ---- App state ----
+const Jibes = {
+  favs: JSON.parse(sessionStorage.getItem("jibes_favs") || "[]"),
+  activeThumb: 0,
+  spotIndex: 0,
+  spotTimer: null,
+
+  init(){
+    this.renderSubnav();
+    window.addEventListener("hashchange", ()=>this.route());
+    this.route();
+    this.syncBadges();
+  },
+
+  persist(){
+    sessionStorage.setItem("jibes_favs", JSON.stringify(this.favs));
+  },
+
+  nav(view, params){
+    let hash = "#/" + view;
+    if(params) hash += "/" + Object.values(params).map(encodeURIComponent).join("/");
+    if(location.hash === hash){ this.route(); } else { location.hash = hash; }
+    window.scrollTo({top:0, behavior:"smooth"});
+  },
+
+  route(){
+    const parts = location.hash.replace(/^#\//,"").split("/").filter(Boolean);
+    const view = parts[0] || "home";
+    this.setActiveSubnav(view==="category" ? parts[1] : (view==="home" ? "home" : null));
+    if(this.spotTimer){ clearInterval(this.spotTimer); this.spotTimer = null; }
+    if(view==="home") return this.renderHome();
+    if(view==="category") return this.renderCategory(parts[1]);
+    if(view==="listing") return this.renderListing(parts[1], parts[2]);
+    if(view==="product") return this.renderProduct(parts[1]);
+    if(view==="allergy") return this.renderAllergyListing(parts[1]);
+    if(view==="collection") return this.renderCollection(parts[1]);
+    if(view==="brand") return this.renderBrand(decodeURIComponent(parts[1]||""));
+    if(view==="search") return this.renderSearchResults(decodeURIComponent(parts[1]||""));
+    if(view==="favorites") return this.renderFavorites();
+    return this.renderHome();
+  },
+
+  toast(msg){
+    const t = document.getElementById("toast");
+    t.textContent = msg;
+    t.classList.add("is-show");
+    clearTimeout(this._toastTimer);
+    this._toastTimer = setTimeout(()=>t.classList.remove("is-show"), 2400);
+  },
+
+  submitSearch(e){
+    e.preventDefault();
+    const q = document.getElementById("searchInput").value.trim();
+    if(q) this.nav("search", {q});
+    return false;
+  },
+
+  renderSubnav(){
+    const el = document.getElementById("topSubnav");
+    el.innerHTML = CATEGORIES.filter(c=>!c.collection).map(c=>
+      `<button data-nav="${c.id}" onclick="Jibes.nav('category',{id:'${c.id}'})">${c.label}</button>`
+    ).join("") + CATEGORIES.filter(c=>c.collection).map(c=>
+      `<button data-nav="${c.id}" onclick="Jibes.nav('collection',{id:'${c.id}'})">${c.label}</button>`
+    ).join("");
+  },
+  setActiveSubnav(catId){
+    document.querySelectorAll("#topSubnav button").forEach(b=>{
+      b.classList.toggle("is-active", b.dataset.nav===catId);
+    });
+  },
+
+  /* ---------- small render helpers ---------- */
+  swatchHTML(sw, emoji){
+    return `<div class="swatch sw-${sw}"><span>${emoji}</span></div>`;
+  },
+  stars(rating){
+    const full = Math.round(rating);
+    return "★★★★★☆☆☆☆☆".slice(5-full,10-full);
+  },
+  chip(key, mini){
+    const a = ALLERGENS[key];
+    if(!a) return "";
+    return `<span class="${mini?'mini-chip':'badge-pill'}" style="background:var(--chip-${key}-bg); color:var(--chip-${key}-fg);">${mini?'':ICONS[a.icon]}${a.label}</span>`;
+  },
+  crumbs(items){
+    return `<nav class="crumbs">${items.map((it,i)=> i<items.length-1
+      ? `<button onclick="${it.go}">${it.label}</button> &nbsp;›&nbsp; `
+      : `<span style="color:var(--ink-900); font-weight:600;">${it.label}</span>`
+    ).join("")}</nav>`;
+  },
+  productCard(p){
+    const isFav = this.favs.includes(p.id);
+    const freeChips = (p.free||[]).filter(k=>k!=="top9").slice(0,2);
+    return `
+    <div class="pcard">
+      <button class="fav ${isFav?'is-fav':''}" aria-label="Toggle favorite" onclick="Jibes.toggleFav('${p.id}', this)">${ICONS.heart}</button>
+      <a class="imglink" href="#/product/${p.id}" onclick="event.preventDefault();Jibes.nav('product',{id:'${p.id}'})">${this.swatchHTML(p.sw,p.emoji)}</a>
+      <div class="brand">${p.brand}</div>
+      <div class="name"><a href="#/product/${p.id}" onclick="event.preventDefault();Jibes.nav('product',{id:'${p.id}'})">${p.name}</a></div>
+      <div class="rating"><span class="stars">${this.stars(p.rating)}</span> ${p.rating} <span class="tabular">(${p.reviews})</span></div>
+      <div class="chiprow">${freeChips.map(k=>this.chip(k,true)).join("")}${p.free && p.free.includes('top9') ? `<span class="mini-chip" style="background:var(--chip-top9-bg); color:var(--chip-top9-fg);">Top 9 Free</span>`:''}</div>
+      <div class="price tabular">$${p.price.toFixed(2)} <span style="font-size:11px; font-weight:500; color:var(--ink-500);">at retailer</span></div>
+      <div class="afflabel">${ICONS.external} Affiliate links to our retail partners</div>
+      <div class="buyrow">${this.buyLinks(p).map((b,i)=>`<a class="buy-btn ${i===0?'primary':''}" href="${b.url}" target="_blank" rel="noopener sponsored">${ICONS.external}${b.name}</a>`).join("")}</div>
+    </div>`;
+  },
+  buyLinks(p){
+    const q = encodeURIComponent(`${p.brand} ${p.name}`);
+    return [
+      {name:"Amazon", url:`https://www.amazon.com/s?k=${q}`},
+      {name:"Thrive Market", url:`https://thrivemarket.com/search?q=${q}`},
+    ];
+  },
+  productGrid(list){
+    if(!list.length) return `<div class="empty-aisle"><div class="e">🧺</div><p><b>We're still stocking this aisle.</b><br>New allergy-friendly picks are added every week — check back soon.</p></div>`;
+    return `<div class="product-grid">${list.map(p=>this.productCard(p)).join("")}</div>`;
+  },
+  filterRailHTML(activeSub, cat){
+    const groups = [
+      {name:"Dietary Preference", opts:["Vegan","Non-GMO","Grain-Free","Organic"]},
+      {name:"Allergens", opts:Object.values(ALLERGENS).map(a=>a.label)},
+      {name:"Ingredients", opts:["5 Ingredients or Less","No Added Sugar"]},
+      {name:"Brands", opts:[...new Set(PRODUCTS.map(p=>p.brand))].slice(0,6)},
+    ];
+    const subLinks = cat ? cat.subcats.map(s=>
+      `<li><button class="${activeSub===s.id?'is-active':''}" onclick="Jibes.nav('listing',{cat:'${cat.id}',sub:'${s.id}'})">${s.label}</button></li>`
+    ).join("") : "";
+    return `
+    <aside class="filter-rail">
+      ${cat ? `<h4>Shop ${cat.label}</h4><ul class="rail-links"><li><button class="${!activeSub?'is-active':''}" onclick="Jibes.nav('category',{id:'${cat.id}'})">All ${cat.label}</button></li>${subLinks}</ul>`:""}
+      <h4>Filter By</h4>
+      ${groups.map(g=>`
+        <details class="filter-group">
+          <summary>${g.name}</summary>
+          <div style="padding-top:8px;">
+            ${g.opts.map(o=>`<label class="filter-opt"><input type="checkbox" onchange="Jibes.toast('Filtering is illustrative in this prototype.')"> ${o}</label>`).join("")}
+          </div>
+        </details>`).join("")}
+      <button class="clear-filters" onclick="Jibes.toast('Filters reset.')">Clear All Filters</button>
+    </aside>`;
+  },
+  trustIconsRow(){
+    return `<div class="icon-row">
+      <div class="it">${ICONS.leaf} Ingredient Transparency</div>
+      <div class="it">${ICONS.shield} Allergy Aware</div>
+      <div class="it">${ICONS.check} Carefully Vetted</div>
+      <div class="it">${ICONS.compare} Compare Trusted Retailers</div>
+    </div>`;
+  },
+
+  /* ---------- views ---------- */
+  renderHome(){
+    document.title = "Jibes — Healthy Living, Made Simpler";
+    document.getElementById("app").innerHTML = `
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Allergy-Friendly Buying Guide</span>
+          <h1 style="margin-top:10px;">Healthy Living,<br>Made Simpler.</h1>
+          <p>Discover trusted food, household, and personal care products — all in one place.</p>
+          <button class="btn btn-primary" onclick="Jibes.nav('category',{id:'food'})">Shop Now →</button>
+        </div>
+        <div id="spotlightCard"></div>
+      </div>
+      <div class="trustbar">
+        <div class="trust-item">${ICONS.leaf} Ingredient Transparency</div>
+        <div class="trust-item">${ICONS.shield} Allergy Aware</div>
+        <div class="trust-item">${ICONS.check} Carefully Vetted</div>
+        <div class="trust-item">${ICONS.compare} Compare Trusted Retailers</div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="split-2">
+        <div>
+          <h2 style="font-size:19px; margin-bottom:14px;">Shop by Category</h2>
+          <div class="tile-grid">
+            ${CATEGORIES.map(c=>`
+              <button class="cat-tile" onclick="Jibes.nav('${c.collection?'collection':'category'}',{id:'${c.id}'})">
+                ${c.isNew?'<span class="new-flag">NEW</span>':''}
+                ${this.swatchHTML(c.swatch,c.emoji)}
+                <span class="label">${c.label} →</span>
+              </button>`).join("")}
+          </div>
+        </div>
+        <div>
+          <h2 style="font-size:19px; margin-bottom:14px;">Shop by Allergy</h2>
+          <div class="allergy-grid">
+            ${Object.entries(ALLERGENS).filter(([k])=>k!=="top9").map(([k,a])=>
+              `<button class="allergy-chip" style="background:var(--chip-${k}-bg); color:var(--chip-${k}-fg);" onclick="Jibes.nav('allergy',{key:'${k}'})">${ICONS[a.icon]}${a.label}</button>`
+            ).join("")}
+            <button class="allergy-chip top9" style="background:var(--chip-top9-bg); color:var(--chip-top9-fg);" onclick="Jibes.nav('allergy',{key:'top9'})">${ICONS.shield}Top 9 Allergen-Free</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <h2 style="font-size:19px; margin-bottom:14px;">Learn &amp; Discover</h2>
+      <div class="learn-grid">
+        <div class="learn-card">
+          <div class="art" style="background:var(--fern-50);">🥗</div>
+          <div class="body"><span class="eyebrow">Food is Medicine</span><h3>Ingredients that support a healthier you</h3><p>Explore how food, ingredients, and lifestyle choices can support a healthier you.</p><span class="go">Explore Articles →</span></div>
+        </div>
+        <div class="learn-card">
+          <div class="art" style="background:var(--chip-fragrance-bg);">📖</div>
+          <div class="body"><span class="eyebrow">Wellness &amp; Allergy Living</span><h3>Expert guides for everyday allergy life</h3><p>Research updates, ingredient education, and everyday tips for living well.</p><span class="go">Browse Guides →</span></div>
+        </div>
+        <div class="learn-card">
+          <div class="art" style="background:var(--chip-treenut-bg);">🌱</div>
+          <div class="body"><span class="eyebrow">Our Story</span><h3>The standards behind Jibes</h3><p>Learn about Jibes, our mission, and the standards that guide everything we do.</p><span class="go">Learn More →</span></div>
+        </div>
+      </div>
+    </section>`;
+    this.renderSpotlight();
+    this.spotTimer = setInterval(()=>{
+      this.spotIndex = (this.spotIndex+1) % SPOTLIGHT_ORDER.length;
+      this.renderSpotlight();
+    }, 6000);
+  },
+
+  /* ---------- paid brand spotlight (hero "window") ---------- */
+  renderSpotlight(){
+    const el = document.getElementById("spotlightCard");
+    if(!el) return;
+    const brandName = SPOTLIGHT_ORDER[this.spotIndex];
+    const b = BRANDS[brandName];
+    const featured = PRODUCTS.filter(p=>p.brand===brandName).slice(0,2);
+    el.innerHTML = `
+      <div class="spotlight-card">
+        <span class="spotlight-label">${ICONS.check} Sponsored · In Partnership With</span>
+        <div class="spotlight-top">
+          <div class="spotlight-emoji">${b.emoji}</div>
+          <div>
+            <div class="spotlight-brand">${brandName}</div>
+            <div class="spotlight-tagline">${b.tagline}</div>
+          </div>
+        </div>
+        <p class="spotlight-story">“${b.story}”</p>
+        <div class="spotlight-meta">Founded ${b.since} · ${b.hq}</div>
+        <div class="spotlight-products">
+          ${featured.map(p=>`<a class="spot-pchip" href="#/product/${p.id}" onclick="event.preventDefault();Jibes.nav('product',{id:'${p.id}'})">
+            <span class="sw">${this.swatchHTML(p.sw,p.emoji)}</span>
+            <span class="tx"><b>${p.name}</b>$${p.price.toFixed(2)}</span>
+          </a>`).join("")}
+        </div>
+        <div class="spotlight-foot">
+          <button class="btn btn-outline btn-sm" onclick="Jibes.nav('brand',{name:'${brandName.replace(/'/g,"\\'")}'})">Meet ${brandName} →</button>
+          <div class="spotlight-dots">
+            ${SPOTLIGHT_ORDER.map((n,i)=>`<button aria-label="Show ${n}" class="${i===this.spotIndex?'is-active':''}" onclick="Jibes.setSpotlight(${i})"></button>`).join("")}
+          </div>
+        </div>
+      </div>`;
+  },
+  setSpotlight(i){
+    this.spotIndex = i;
+    this.renderSpotlight();
+    if(this.spotTimer) clearInterval(this.spotTimer);
+    this.spotTimer = setInterval(()=>{
+      this.spotIndex = (this.spotIndex+1) % SPOTLIGHT_ORDER.length;
+      this.renderSpotlight();
+    }, 6000);
+  },
+
+  renderBrand(name){
+    const b = BRANDS[name];
+    const list = PRODUCTS.filter(p=>p.brand===name);
+    if(!b){
+      document.title = "Brand — Jibes";
+      document.getElementById("app").innerHTML = `
+        ${this.crumbs([{label:"Home",go:"Jibes.nav('home')"},{label:name}])}
+        <div class="page-head"><h1>${name}</h1></div>
+        ${list.length ? this.productGrid(list) : `<div class="empty-aisle"><div class="e">🔎</div><p><b>No dedicated brand page yet.</b><br>Here's everything we carry from ${name}.</p></div>`}`;
+      return;
+    }
+    document.title = `${name} — Jibes`;
+    document.getElementById("app").innerHTML = `
+      ${this.crumbs([{label:"Home",go:"Jibes.nav('home')"},{label:name}])}
+      <div class="brand-hero">
+        <div class="badge5">${b.emoji}</div>
+        <div>
+          <span class="badge-pill" style="background:var(--sand-100); color:var(--ink-500);">${ICONS.check} Sponsored Partner</span>
+          <h1 style="margin-top:8px;">${name}</h1>
+          <div class="spotlight-tagline">${b.tagline}</div>
+          <p class="story">“${b.story}”</p>
+          <div class="meta">Founded ${b.since} · ${b.hq} · Screened for the top 9 allergens on every product below</div>
+        </div>
+      </div>
+      <div class="listing-toolbar"><span class="count">${list.length} product${list.length===1?'':'s'} from ${name}</span></div>
+      ${this.productGrid(list)}`;
+  },
+
+  renderCategory(catId){
+    const cat = CATEGORIES.find(c=>c.id===catId);
+    if(!cat || cat.collection) return this.renderHome();
+    document.title = `${cat.label} — Jibes`;
+    document.getElementById("app").innerHTML = `
+      ${this.crumbs([{label:"Home",go:"Jibes.nav('home')"},{label:"Categories",go:"Jibes.nav('home')"},{label:cat.label}])}
+      <div class="page-head"><h1>${cat.label}</h1><p>Discover better-for-you ${cat.label.toLowerCase()} made with simple, transparent ingredients you can feel good about.</p></div>
+      ${this.trustIconsRow()}
+      <div class="layout-2col">
+        ${this.filterRailHTML(null, cat)}
+        <div>
+          <h2 style="font-size:17px; margin-bottom:4px;">Shop ${cat.label} Categories</h2>
+          <p style="color:var(--ink-500); font-size:13.5px; margin:0 0 16px;">Find the right products for your lifestyle and needs.</p>
+          <div class="tile-grid subcats">
+            ${cat.subcats.map(s=>{
+              const sample = PRODUCTS.find(p=>p.category===cat.id && p.subcat===s.id);
+              return `<button class="subcat-tile" onclick="Jibes.nav('listing',{cat:'${cat.id}',sub:'${s.id}'})">
+                ${this.swatchHTML(cat.swatch, sample?sample.emoji:cat.emoji)}
+                <span class="n">${s.label}</span><span class="c">${s.count.toLocaleString()} items →</span>
+              </button>`;
+            }).join("")}
+          </div>
+          ${cat.id==="food" ? `
+          <div class="promo-banner">
+            <div class="badge5"><b>5</b><i>OR LESS</i></div>
+            <div class="txt"><h3>Looking for simple ingredient foods?</h3>
+              <div class="promo-checks"><span>✓ 5 ingredients or less</span><span>✓ No artificial colors</span><span>✓ No artificial flavors</span><span>✓ No artificial preservatives</span></div>
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="Jibes.nav('collection',{id:'five-ingredients'})">Shop Now</button>
+          </div>`:""}
+        </div>
+      </div>`;
+  },
+
+  renderListing(catId, subId){
+    const cat = CATEGORIES.find(c=>c.id===catId);
+    const sub = cat && cat.subcats && cat.subcats.find(s=>s.id===subId);
+    if(!cat || !sub) return this.renderHome();
+    const list = PRODUCTS.filter(p=>p.category===catId && p.subcat===subId);
+    document.title = `${sub.label} — Jibes`;
+    document.getElementById("app").innerHTML = `
+      ${this.crumbs([{label:"Home",go:"Jibes.nav('home')"},{label:cat.label,go:`Jibes.nav('category',{id:'${cat.id}'})`},{label:sub.label}])}
+      <div class="page-head"><h1>${sub.label}</h1><p>Better-for-you ${sub.label.toLowerCase()} the whole family can feel good about.</p></div>
+      ${this.trustIconsRow()}
+      <div class="layout-2col">
+        ${this.filterRailHTML(subId, cat)}
+        <div>
+          <div class="listing-toolbar">
+            <span class="count">Showing ${list.length} of ${sub.count.toLocaleString()} products</span>
+            <div class="sortbox"><label style="font-size:12.5px; color:var(--ink-500);">Sort by</label>
+              <select onchange="Jibes.toast('Sorting is illustrative in this prototype.')">
+                <option>Best Sellers</option><option>Price: Low to High</option><option>Price: High to Low</option><option>Top Rated</option>
+              </select>
+            </div>
+          </div>
+          ${this.productGrid(list)}
+        </div>
+      </div>`;
+  },
+
+  renderAllergyListing(key){
+    const a = ALLERGENS[key];
+    if(!a) return this.renderHome();
+    const list = PRODUCTS.filter(p=>(p.free||[]).includes(key));
+    document.title = `${a.label} — Jibes`;
+    document.getElementById("app").innerHTML = `
+      ${this.crumbs([{label:"Home",go:"Jibes.nav('home')"},{label:"Shop by Allergy",go:"Jibes.nav('home')"},{label:a.label}])}
+      <div class="page-head">
+        <span class="badge-pill" style="background:var(--chip-${key}-bg); color:var(--chip-${key}-fg);">${ICONS[a.icon]}${a.label}</span>
+        <h1 style="margin-top:12px;">${a.label} Shop</h1>
+        <p>Every product here has been screened and labeled ${a.label.toLowerCase()} — across food, household, personal care, and more.</p>
+      </div>
+      ${this.trustIconsRow()}
+      <div class="listing-toolbar"><span class="count">${list.length} products match</span></div>
+      ${this.productGrid(list)}`;
+  },
+
+  renderCollection(id){
+    const cat = CATEGORIES.find(c=>c.id===id);
+    if(!cat) return this.renderHome();
+    let list;
+    if(cat.collection==="fragrance") list = PRODUCTS.filter(p=>(p.free||[]).includes("fragrance"));
+    else list = PRODUCTS.filter(p=>p.simple && p.simple<=5);
+    document.title = `${cat.label} — Jibes`;
+    document.getElementById("app").innerHTML = `
+      ${this.crumbs([{label:"Home",go:"Jibes.nav('home')"},{label:cat.label}])}
+      <div class="page-head"><h1>${cat.label}</h1>
+        <p>${cat.collection==="fragrance"
+          ? "Household and personal care picks made without added fragrance, for sensitive noses and skin."
+          : "Foods made with five ingredients or less — no artificial colors, flavors, or preservatives."}</p>
+      </div>
+      ${this.trustIconsRow()}
+      <div class="listing-toolbar"><span class="count">${list.length} products match</span></div>
+      ${this.productGrid(list)}`;
+  },
+
+  renderSearchResults(q){
+    const needle = q.toLowerCase();
+    const list = PRODUCTS.filter(p => p.name.toLowerCase().includes(needle) || p.brand.toLowerCase().includes(needle) || p.category.includes(needle));
+    document.title = `"${q}" — Jibes`;
+    document.getElementById("app").innerHTML = `
+      ${this.crumbs([{label:"Home",go:"Jibes.nav('home')"},{label:`Search: "${q}"`}])}
+      <div class="page-head"><h1>Results for "${q}"</h1><p>${list.length} product${list.length===1?'':'s'} found.</p></div>
+      ${this.productGrid(list)}`;
+  },
+
+  renderFavorites(){
+    const list = PRODUCTS.filter(p=>this.favs.includes(p.id));
+    document.title = "Favorites — Jibes";
+    document.getElementById("app").innerHTML = `
+      ${this.crumbs([{label:"Home",go:"Jibes.nav('home')"},{label:"Favorites"}])}
+      <div class="page-head"><h1>Your Favorites</h1><p>Products you've saved for later.</p></div>
+      ${list.length ? this.productGrid(list) : `<div class="empty-aisle"><div class="e">🤍</div><p><b>No favorites yet.</b><br>Tap the heart on any product to save it here.</p></div>`}`;
+  },
+
+  renderProduct(id){
+    const p = PRODUCTS.find(x=>x.id===id);
+    if(!p) return this.renderHome();
+    const cat = CATEGORIES.find(c=>c.id===p.category);
+    const sub = cat.subcats.find(s=>s.id===p.subcat);
+    const related = PRODUCTS.filter(x=>x.subcat===p.subcat && x.id!==p.id).slice(0,5);
+    const isFav = this.favs.includes(p.id);
+    document.title = `${p.name} — Jibes`;
+    this.activeThumb = 0;
+    const thumbs = [p.emoji, "🏷️", "📦", "🔍"];
+    document.getElementById("app").innerHTML = `
+      ${this.crumbs([{label:"Home",go:"Jibes.nav('home')"},{label:cat.label,go:`Jibes.nav('category',{id:'${cat.id}'})`},{label:sub.label,go:`Jibes.nav('listing',{cat:'${cat.id}',sub:'${sub.id}'})`},{label:p.name}])}
+      <div class="pdp-top">
+        <div class="pdp-gallery">
+          <div class="main-swatch">${this.swatchHTML(p.sw,p.emoji,'34%')}</div>
+          <div class="thumb-row">
+            ${thumbs.map((t,i)=>`<button class="thumb ${i===0?'is-active':''}" onclick="Jibes.switchThumb(${i},this)">${this.swatchHTML(p.sw,t,'55%')}</button>`).join("")}
+          </div>
+        </div>
+        <div class="pdp-info">
+          <a class="brandlink" href="#" onclick="event.preventDefault();Jibes.nav('brand',{name:'${p.brand.replace(/'/g,"\\'")}'})">${p.brand}</a>
+          <h1>${p.name}</h1>
+          <div class="rating"><span class="stars">${this.stars(p.rating)}</span> ${p.rating} <span class="tabular">(${p.reviews} Reviews)</span></div>
+          <div class="price tabular">$${p.price.toFixed(2)} <span style="font-size:13px; color:var(--ink-500); font-family:var(--font-body); font-weight:500;">${p.size?('· '+p.size):''}</span></div>
+          <div class="pdp-buybox">
+            <h3>${ICONS.compare} Where to Buy</h3>
+            <p class="sub">Jibes doesn't sell directly. These are affiliate links to our retail partners — if you buy through one, Jibes may earn a commission at no extra cost to you. Prices vary by retailer.</p>
+            <div class="pdp-buy-list">
+              ${this.buyLinks(p).map((b,i)=>`
+                <div class="pdp-buy-row">
+                  <div><div class="who">${b.name}</div><div class="note">Opens in a new tab</div></div>
+                  <a class="btn ${i===0?'btn-green':'btn-outline'}" href="${b.url}" target="_blank" rel="noopener sponsored">Buy at ${b.name} ${ICONS.external}</a>
+                </div>`).join("")}
+            </div>
+          </div>
+          <div class="pdp-cta">
+            <button class="btn btn-outline" id="pdpFavBtn" onclick="Jibes.toggleFav('${p.id}', document.getElementById('pdpFavBtn'), true)">${isFav?'♥ Saved to Favorites':'♡ Add to Favorites'}</button>
+          </div>
+          <div class="badge-row">
+            ${(p.free||[]).filter(k=>k!=="top9").map(k=>this.chip(k)).join("")}
+            ${p.vegan?`<span class="badge-pill" style="background:var(--chip-soy-bg); color:var(--chip-soy-fg);">${ICONS.leaf2} Vegan</span>`:""}
+            ${p.nonGmo?`<span class="badge-pill" style="background:var(--sand-100); color:var(--ink-900);">${ICONS.check} Non-GMO</span>`:""}
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-panels">
+        <div class="panel"><h3>Product Details</h3><p>${p.desc}</p></div>
+        <div class="panel"><h3>About ${p.brand}</h3><p>${p.brandNote}</p></div>
+        <div class="panel"><h3>Ingredients</h3><ul>${p.ingredients.map(i=>`<li>${i}</li>`).join("")}</ul>${p.simple?`<span class="simple-flag">${ICONS.leaf2} ${p.simple} simple ingredients</span>`:""}</div>
+        <div class="panel"><h3>Nutrition Facts</h3><p>Per serving values vary by size — see packaging for full nutrition facts and serving size.</p></div>
+        <div class="panel allergen"><h3>${ICONS.shield} Allergen Information</h3><p>${p.allergenNote}</p></div>
+      </div>
+
+      <div class="reviews-block">
+        <div class="rv-score">
+          <div class="n tabular">${p.rating}</div>
+          <div class="stars">${this.stars(p.rating)}</div>
+          <div class="c">Based on ${p.reviews} reviews</div>
+        </div>
+        <div>
+          ${[5,4,3,2,1].map(n=>{
+            const pct = n===5?68:n===4?20:n===3?7:n===2?3:2;
+            return `<div class="bar-row"><span>${n} star</span><div class="bar-track"><div class="bar-fill" style="width:${pct}%"></div></div><span>${pct}%</span></div>`;
+          }).join("")}
+        </div>
+      </div>
+
+      ${related.length ? `
+      <section class="section" style="padding-top:0;">
+        <div class="section-head"><h2 style="font-size:18px;">You May Also Like</h2></div>
+        <div class="rail-row">${related.map(r=>this.productCard(r)).join("")}</div>
+      </section>`:""}
+    `;
+  },
+
+  switchThumb(i, el){
+    document.querySelectorAll(".thumb").forEach(t=>t.classList.remove("is-active"));
+    el.classList.add("is-active");
+  },
+
+  /* ---------- favorites ---------- */
+  toggleFav(id, el, isPdp){
+    const i = this.favs.indexOf(id);
+    if(i>-1){ this.favs.splice(i,1); } else { this.favs.push(id); }
+    this.persist(); this.syncBadges();
+    if(el){
+      if(isPdp){ el.textContent = this.favs.includes(id) ? "♥ Saved to Favorites" : "♡ Add to Favorites"; }
+      else { el.classList.toggle("is-fav", this.favs.includes(id)); }
+    }
+    if(location.hash.startsWith("#/favorites")) this.renderFavorites();
+  },
+  syncBadges(){
+    const fc = this.favs.length;
+    const fEl = document.getElementById("favCount");
+    fEl.textContent = fc; fEl.hidden = fc===0;
+  },
+};
+
+Jibes.init();
+</script>
+
+
+</body>
+</html>
