@@ -368,6 +368,112 @@ select{font:inherit; border:1px solid var(--line); background:var(--card-bg); co
 .toast{position:fixed; left:50%; bottom:26px; transform:translateX(-50%) translateY(10px); background:var(--plum-900); color:#fff; padding:12px 20px; border-radius:999px; font-size:13.5px; font-weight:600; box-shadow:var(--shadow-md); z-index:80; opacity:0; pointer-events:none; transition:opacity .18s ease, transform .18s ease;}
 .toast.is-show{opacity:1; transform:translateX(-50%) translateY(0);}
 
+/* ===== two-list badges + curator UI ===== */
+.foot-link{background:none; border:0; padding:0; color:var(--ink-500); font-family:var(--font-body); font-size:13px; font-weight:600; text-align:left; cursor:pointer;}
+.foot-link:hover{color:var(--fern-700); text-decoration:underline;}
+.listbadges{display:flex; gap:6px; flex-wrap:wrap; margin:2px 0 0;}
+.lb{display:inline-flex; align-items:center; gap:5px; font-size:10.5px; font-weight:700; padding:3px 8px; border-radius:999px; letter-spacing:.01em; border:1px solid transparent; line-height:1;}
+.lb svg{width:12px; height:12px;}
+.lb.friendly{background:var(--chip-sesame-bg); color:var(--chip-sesame-fg); border-color:var(--chip-sesame-fg);}
+.lb.clean{background:var(--fern-50); color:var(--fern-700); border-color:var(--fern-600);}
+.mini-chip.freechip, .badge-pill.freechip{background:var(--chip-dairy-bg); color:var(--chip-dairy-fg); border:1px solid transparent;}
+.claimsrc{display:flex; gap:6px; align-items:flex-start; font-size:11px; color:var(--ink-500); line-height:1.35; margin-top:1px;}
+.claimsrc svg{width:13px; height:13px; flex-shrink:0; margin-top:1px; color:var(--fern-600);}
+.claimsrc b{color:var(--ink-900); font-weight:600;}
+.pcaution{display:flex; gap:7px; align-items:flex-start; background:var(--chip-peanut-bg); color:var(--chip-peanut-fg); border-radius:9px; padding:7px 9px; font-size:10.8px; font-weight:600; line-height:1.3; margin-top:1px;}
+.pcaution svg{width:14px; height:14px; flex-shrink:0; margin-top:1px;}
+.toolbar-right{display:flex; gap:12px; align-items:center; flex-wrap:wrap;}
+.af-toggle{display:inline-flex; background:var(--sand-100); border:1px solid var(--line); border-radius:999px; padding:3px; gap:2px;}
+.af-toggle button{border:0; background:transparent; font-family:var(--font-body); font-size:12px; font-weight:600; color:var(--ink-500); padding:6px 12px; border-radius:999px; display:inline-flex; align-items:center; gap:5px; cursor:pointer; white-space:nowrap;}
+.af-toggle button svg{width:13px; height:13px;}
+.af-toggle button.on{background:var(--fern-600); color:#fff;}
+.modal-back{position:fixed; inset:0; background:rgba(20,14,26,.55); display:flex; align-items:center; justify-content:center; z-index:120; padding:20px; opacity:0; pointer-events:none; transition:opacity .16s ease;}
+.modal-back.is-show{opacity:1; pointer-events:auto;}
+.modal-card{background:var(--card-bg); border:1px solid var(--line); border-radius:var(--radius-l); max-width:440px; width:100%; padding:26px; box-shadow:var(--shadow-md); transform:translateY(8px); transition:transform .16s ease;}
+.modal-back.is-show .modal-card{transform:none;}
+.modal-card .mi{width:46px; height:46px; border-radius:12px; background:var(--fern-50); color:var(--fern-600); display:flex; align-items:center; justify-content:center; margin-bottom:14px;}
+.modal-card .mi svg{width:24px; height:24px;}
+.modal-card h3{font-size:19px; margin-bottom:8px;}
+.modal-card p{font-size:14px; color:var(--ink-500); line-height:1.55; margin:0 0 8px;}
+.modal-card p b{color:var(--ink-900); font-weight:600;}
+.modal-acts{display:flex; gap:10px; margin-top:18px; flex-wrap:wrap; justify-content:flex-end;}
+.badge-guide{display:flex; flex-direction:column; gap:13px; margin:14px 0 6px;}
+.bg-row{display:flex; gap:12px; align-items:flex-start; font-size:13px; color:var(--ink-500); line-height:1.5;}
+.bg-row .lb{flex-shrink:0; margin-top:1px;}
+.bg-row b{color:var(--ink-900); font-weight:600;}
+.how-video{aspect-ratio:16/9; max-height:340px; background:var(--sand-100); border:1px dashed var(--line); border-radius:var(--radius-m); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; color:var(--ink-500); text-align:center; padding:20px; margin-bottom:28px;}
+.how-video svg{width:44px; height:44px; color:var(--fern-600);}
+.how-lists{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+@media(max-width:640px){.how-lists{grid-template-columns:1fr;}}
+.how-list{background:var(--card-bg); border:1px solid var(--line); border-radius:var(--radius-m); padding:22px; box-shadow:var(--shadow-sm);}
+.hl-seal{width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:12px; border:1px solid;}
+.hl-seal svg{width:24px; height:24px;}
+.hl-seal.friendly{background:var(--chip-sesame-bg); color:var(--chip-sesame-fg); border-color:var(--chip-sesame-fg);}
+.hl-seal.clean{background:var(--fern-50); color:var(--fern-600); border-color:var(--fern-600);}
+.how-list h3{font-size:18px; margin-bottom:8px;}
+.how-list p{font-size:13.5px; color:var(--ink-500); line-height:1.55; margin:0;}
+.how-list p b{color:var(--ink-900); font-weight:600;}
+.how-note{display:flex; gap:12px; align-items:flex-start; background:var(--chip-peanut-bg); color:var(--chip-peanut-fg); border-radius:var(--radius-m); padding:18px 20px; margin-top:20px; font-size:14px; line-height:1.55;}
+.how-note svg{width:22px; height:22px; flex-shrink:0; margin-top:1px;}
+.how-note b{color:inherit;}
+
+/* ===== add to list button (cards) ===== */
+.addlist-btn{flex:1; display:flex; align-items:center; justify-content:center; gap:6px; border-radius:999px; font-weight:700; font-size:12.5px; padding:9px 8px; border:1px solid var(--fern-600); background:var(--fern-600); color:#fff; font-family:var(--font-body); cursor:pointer;}
+.addlist-btn:hover{background:var(--fern-700); border-color:var(--fern-700);}
+.addlist-btn svg{width:14px; height:14px;}
+.addlist-btn.added{background:var(--fern-50); color:var(--fern-700); border-color:var(--fern-600);}
+
+/* ===== Jibes List page ===== */
+.rtiles{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:6px 0 20px;}
+@media(max-width:640px){.rtiles{grid-template-columns:1fr;}}
+.rtile{position:relative; text-align:left; background:var(--card-bg); border:1.5px solid var(--line); border-radius:var(--radius-m); padding:16px 16px 14px; display:flex; flex-direction:column; gap:3px; cursor:pointer; transition:border-color .12s ease;}
+.rtile:hover{border-color:var(--line-strong,var(--plum-700));}
+.rtile.is-active{border-color:var(--plum-700); box-shadow:0 0 0 3px rgba(90,57,147,.12);}
+.rtile .rt-name{font-weight:700; font-size:14px; color:var(--ink-900); display:flex; align-items:center; gap:8px;}
+.rtile .rt-total{font-family:var(--font-display); font-size:26px; font-weight:600; color:var(--plum-900); font-variant-numeric:tabular-nums;}
+.rtile .rt-sub{font-size:11.5px; color:var(--ink-500);}
+.rtile.is-low{border-color:var(--fern-600);}
+.rtile.is-low.is-active{box-shadow:0 0 0 3px rgba(51,107,69,.14);}
+.low-tag{font-size:9.5px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; background:var(--fern-600); color:#fff; padding:2px 7px; border-radius:999px;}
+.list-panel{background:var(--card-bg); border:1px solid var(--line); border-radius:var(--radius-l); overflow:hidden;}
+.list-panel-head{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 18px; border-bottom:1px solid var(--line); font-size:13px; color:var(--ink-500);}
+.list-panel-head b{color:var(--ink-900);}
+.clear-list{background:none; border:0; color:var(--ink-500); font-family:var(--font-body); font-size:12.5px; font-weight:600; display:inline-flex; align-items:center; gap:5px; cursor:pointer;}
+.clear-list:hover{color:var(--rose-600);}
+.clear-list svg{width:13px; height:13px;}
+.listrow{display:flex; align-items:center; gap:14px; padding:14px 18px;}
+.listrow + .listrow{border-top:1px solid var(--line);}
+.lr-img{width:60px; height:60px; flex-shrink:0; border-radius:12px; overflow:hidden;}
+.lr-img .swatch{border-radius:12px;}
+.lr-main{flex:1; min-width:0; display:flex; flex-direction:column; gap:3px;}
+.lr-brand{font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-500); font-weight:700;}
+.lr-name{font-family:var(--font-display); font-size:15px; font-weight:600; color:var(--plum-900); text-decoration:none; line-height:1.2;}
+.lr-badges{display:flex; gap:5px; flex-wrap:wrap; margin-top:2px;}
+.lr-qty{display:inline-flex; align-items:center; gap:0; border:1px solid var(--line); border-radius:999px; overflow:hidden; flex-shrink:0;}
+.lr-qty button{width:30px; height:30px; border:0; background:var(--sand-100); color:var(--ink-900); font-size:16px; font-weight:700; cursor:pointer; line-height:1;}
+.lr-qty button:hover{background:var(--fern-50); color:var(--fern-700);}
+.lr-qty span{min-width:30px; text-align:center; font-size:14px; font-weight:600;}
+.lr-price{text-align:right; font-weight:700; font-size:15px; color:var(--ink-900); display:flex; flex-direction:column; align-items:flex-end; min-width:76px; font-variant-numeric:tabular-nums;}
+.lr-price .lr-unit{font-size:11px; font-weight:500; color:var(--ink-500);}
+.lr-actions{display:flex; flex-direction:column; gap:8px; align-items:center; flex-shrink:0;}
+.lr-open, .lr-remove{width:30px; height:30px; border-radius:8px; border:1px solid var(--line); background:var(--card-bg); color:var(--ink-500); display:flex; align-items:center; justify-content:center; cursor:pointer;}
+.lr-open{text-decoration:none;}
+.lr-open:hover{border-color:var(--fern-600); color:var(--fern-700);}
+.lr-remove:hover{border-color:var(--rose-600); color:var(--rose-600);}
+.lr-open svg, .lr-remove svg{width:14px; height:14px;}
+@media(max-width:640px){
+  .listrow{flex-wrap:wrap; gap:10px;}
+  .lr-main{flex-basis:calc(100% - 74px);}
+  .lr-price{order:3;} .lr-qty{order:4;} .lr-actions{order:5; flex-direction:row; margin-left:auto;}
+}
+.list-foot{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:16px 18px; border-top:1px solid var(--line); background:var(--sand-100); flex-wrap:wrap;}
+.list-total{font-size:13.5px; color:var(--ink-500); display:flex; flex-direction:column; gap:2px;}
+.list-total b{font-family:var(--font-display); font-size:24px; color:var(--plum-900); font-variant-numeric:tabular-nums;}
+.list-note{display:flex; gap:11px; align-items:flex-start; margin:16px 0 40px; font-size:12.5px; color:var(--ink-500); line-height:1.55; background:var(--sand-100); border:1px solid var(--line); border-radius:var(--radius-m); padding:14px 16px;}
+.list-note svg{width:18px; height:18px; flex-shrink:0; margin-top:1px; color:var(--gold-500);}
+.list-note b{color:var(--ink-900);}
+.list-note .external, .list-note svg.ext{display:inline;}
+
 @media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important; transition-duration:0.01ms!important;}}
 </style>
 </head>
@@ -391,6 +497,10 @@ select{font:inherit; border:1px solid var(--line); background:var(--card-bg); co
         <svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7.5-4.6-10-9.3C.4 7 2 3.5 5.6 3c2.1-.3 4 .8 6.4 3.4C14.4 3.8 16.3 2.7 18.4 3c3.6.5 5.2 4 3.6 7.7C19.5 15.4 12 20 12 20Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
         Favorites<span class="count-badge" id="favCount" hidden>0</span>
       </button>
+      <button class="icon-btn" onclick="Jibes.nav('list')">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 8h12l-1 11a2 2 0 0 1-2 1.8H9a2 2 0 0 1-2-1.8L6 8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        List<span class="count-badge" id="listCount" hidden>0</span>
+      </button>
     </nav>
   </div>
   <div class="wrap subnav" id="topSubnav"></div>
@@ -403,7 +513,7 @@ select{font:inherit; border:1px solid var(--line); background:var(--card-bg); co
     <div class="foot-grid">
       <div>
         <button class="wordmark" style="font-size:20px;" onclick="Jibes.nav('home')" aria-label="Jibes home"><img src="jibes-logo.png" alt="Jibes" class="logo-mark" style="height:60px;"></button>
-        <p style="color:var(--ink-500); font-size:13px; max-width:34ch; margin:10px 0 0;">A curated store of picks that jibe with your allergies — carefully vetted, so shopping never has to feel like guesswork.</p>
+        <p style="color:var(--ink-500); font-size:13px; max-width:34ch; margin:10px 0 0;">A curated guide to picks that jibe with your allergies — organized in one place, so shopping never has to feel like guesswork.</p>
       </div>
       <div>
         <h4>Customer Care</h4>
@@ -411,14 +521,15 @@ select{font:inherit; border:1px solid var(--line); background:var(--card-bg); co
       </div>
       <div>
         <h4>Our Standards</h4>
-        <ul><li>Every product screened for the top 9 allergens</li><li>Ingredients checked, not just categories</li></ul>
+        <ul><li><button class="foot-link" onclick="Jibes.nav('how')">How Jibes Works →</button></li><li>We gather allergen labels &amp; certifications — we don't test them</li><li>Every allergen claim shows its source</li></ul>
       </div>
       <div>
         <h4>Community</h4>
         <ul><li>Join a community that shares tips, recipes, and support</li><li>Join the Community →</li></ul>
       </div>
     </div>
-    <p style="font-size:12px; color:var(--ink-500); max-width:70ch; margin:22px 0 0;">Affiliate Disclosure: Jibes may earn a commission when you buy through links to our retail partners, at no extra cost to you. Commission never affects which products we feature or how we screen them for allergens.</p>
+    <p style="font-size:12px; color:var(--ink-900); font-weight:600; max-width:74ch; margin:22px 0 0;">Allergen information comes from manufacturers and certifiers and can change — always read the actual product label before you buy.</p>
+    <p style="font-size:12px; color:var(--ink-500); max-width:74ch; margin:8px 0 0;">Affiliate Disclosure: Jibes may earn a commission when you buy through links to our retail partners, at no extra cost to you. Commission never affects which products we feature or how we organize their allergen information.</p>
     <div class="foot-bottom">
       <span>© 2026 Jibes. All rights reserved.</span>
       <span>Design prototype — product data and buy links are illustrative</span>
@@ -427,6 +538,7 @@ select{font:inherit; border:1px solid var(--line); background:var(--card-bg); co
 </footer>
 
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div id="modal" class="modal-back" onclick="if(event.target===this)Jibes.modalBackdrop()"></div>
 
 <script>
 /* =========================================================
@@ -462,6 +574,11 @@ const ICONS = {
   external:'<svg viewBox="0 0 24 24" fill="none"><path d="M9 6h9v9M18 6L7 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   check:'<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   heart:'<svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7.5-4.6-10-9.3C.4 7 2 3.5 5.6 3c2.1-.3 4 .8 6.4 3.4C14.4 3.8 16.3 2.7 18.4 3c3.6.5 5.2 4 3.6 7.7C19.5 15.4 12 20 12 20Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
+  alert:'<svg viewBox="0 0 24 24" fill="none"><path d="M12 4l9 16H3L12 4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 10v4M12 17h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+  play:'<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M10 8.5l6 3.5-6 3.5V8.5Z" fill="currentColor"/></svg>',
+  plus:'<svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  bag:'<svg viewBox="0 0 24 24" fill="none"><path d="M6 8h12l-1 11a2 2 0 0 1-2 1.8H9a2 2 0 0 1-2-1.8L6 8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>',
+  trash:'<svg viewBox="0 0 24 24" fill="none"><path d="M5 7h14M10 7V5h4v2M6 7l1 12.5A1.5 1.5 0 0 0 8.5 21h7a1.5 1.5 0 0 0 1.5-1.5L18 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 };
 
 // ---- Categories ----
@@ -611,14 +728,32 @@ const BRANDS = {
 };
 const SPOTLIGHT_ORDER = Object.keys(BRANDS);
 
+// ---- Retailers (illustrative price factors; real build would use live/affiliate-feed prices) ----
+const RETAILERS = [
+  {key:"amazon",  name:"Amazon",        factor:1.00, search:q=>`https://www.amazon.com/s?k=${q}`},
+  {key:"thrive",  name:"Thrive Market", factor:0.90, search:q=>`https://thrivemarket.com/search?q=${q}`, note:"member price"},
+  {key:"walmart", name:"Walmart",       factor:0.97, search:q=>`https://www.walmart.com/search?q=${q}`},
+];
+
 // ---- App state ----
 const Jibes = {
   favs: JSON.parse(sessionStorage.getItem("jibes_favs") || "[]"),
+  list: JSON.parse(sessionStorage.getItem("jibes_list") || "[]"),
+  activeRetailer: "amazon",
   activeThumb: 0,
   spotIndex: 0,
   spotTimer: null,
+  afOnly: false,
+  afAck: false,
+  pendingAF: false,
+  badgeAck: false,
 
   init(){
+    try{
+      this.afOnly = sessionStorage.getItem("jibes_af_only")==="1";
+      this.afAck = sessionStorage.getItem("jibes_af_ack")==="1";
+      this.badgeAck = sessionStorage.getItem("jibes_badge_ack")==="1";
+    }catch(e){ this.afOnly = false; this.afAck = false; this.badgeAck = false; }
     this.renderSubnav();
     window.addEventListener("hashchange", ()=>this.route());
     this.route();
@@ -627,6 +762,9 @@ const Jibes = {
 
   persist(){
     sessionStorage.setItem("jibes_favs", JSON.stringify(this.favs));
+  },
+  persistList(){
+    try{ sessionStorage.setItem("jibes_list", JSON.stringify(this.list)); }catch(e){}
   },
 
   nav(view, params){
@@ -650,6 +788,8 @@ const Jibes = {
     if(view==="brand") return this.renderBrand(decodeURIComponent(parts[1]||""));
     if(view==="search") return this.renderSearchResults(decodeURIComponent(parts[1]||""));
     if(view==="favorites") return this.renderFavorites();
+    if(view==="list") return this.renderList();
+    if(view==="how") return this.renderHow();
     return this.renderHome();
   },
 
@@ -693,7 +833,7 @@ const Jibes = {
   chip(key, mini){
     const a = ALLERGENS[key];
     if(!a) return "";
-    return `<span class="${mini?'mini-chip':'badge-pill'}" style="background:var(--chip-${key}-bg); color:var(--chip-${key}-fg);">${mini?'':ICONS[a.icon]}${a.label}</span>`;
+    return `<span class="${mini?'mini-chip':'badge-pill'} freechip">${mini?'':ICONS[a.icon]}${a.label}</span>`;
   },
   crumbs(items){
     return `<nav class="crumbs">${items.map((it,i)=> i<items.length-1
@@ -701,9 +841,15 @@ const Jibes = {
       : `<span style="color:var(--ink-900); font-weight:600;">${it.label}</span>`
     ).join("")}</nav>`;
   },
+  listInfo(p){
+    const top9 = !!(p.free && p.free.includes('top9'));
+    const clean = p.clean !== false;
+    return {top9, clean, source: p.claimSource || 'Brand-labeled: free of the top 9'};
+  },
   productCard(p){
     const isFav = this.favs.includes(p.id);
     const freeChips = (p.free||[]).filter(k=>k!=="top9").slice(0,2);
+    const li = this.listInfo(p);
     return `
     <div class="pcard">
       <button class="fav ${isFav?'is-fav':''}" aria-label="Toggle favorite" onclick="Jibes.toggleFav('${p.id}', this)">${ICONS.heart}</button>
@@ -711,19 +857,101 @@ const Jibes = {
       <div class="brand">${p.brand}</div>
       <div class="name"><a href="#/product/${p.id}" onclick="event.preventDefault();Jibes.nav('product',{id:'${p.id}'})">${p.name}</a></div>
       <div class="rating"><span class="stars">${this.stars(p.rating)}</span> ${p.rating} <span class="tabular">(${p.reviews})</span></div>
-      <div class="chiprow">${freeChips.map(k=>this.chip(k,true)).join("")}${p.free && p.free.includes('top9') ? `<span class="mini-chip" style="background:var(--chip-top9-bg); color:var(--chip-top9-fg);">Top 9 Free</span>`:''}</div>
+      <div class="listbadges">
+        ${li.top9?`<span class="lb friendly">${ICONS.shield}Allergy-Friendly</span>`:''}
+        ${li.clean?`<span class="lb clean">${ICONS.leaf2}Clean</span>`:''}
+      </div>
+      ${(!li.top9 && freeChips.length)?`<div class="chiprow">${freeChips.map(k=>this.chip(k,true)).join("")}</div>`:''}
+      ${li.top9?`<div class="claimsrc">${ICONS.check}<span>${li.source}</span></div>`:''}
+      ${(li.clean && !li.top9)?`<div class="pcaution">${ICONS.alert}<span>Not selected as top-9 allergen-free — read the label.</span></div>`:''}
       <div class="price tabular">$${p.price.toFixed(2)} <span style="font-size:11px; font-weight:500; color:var(--ink-500);">at retailer</span></div>
-      <div class="afflabel">${ICONS.external} Affiliate links to our retail partners</div>
-      <div class="buyrow">${this.buyLinks(p).map((b,i)=>`<a class="buy-btn ${i===0?'primary':''}" href="${b.url}" target="_blank" rel="noopener sponsored">${ICONS.external}${b.name}</a>`).join("")}</div>
+      <div class="afflabel">${ICONS.external} Compare Amazon, Thrive &amp; Walmart on your list</div>
+      <div class="buyrow">
+        <button class="addlist-btn ${this.inList(p.id)?'added':''}" onclick="Jibes.addToList('${p.id}', this)">${this.inList(p.id)?`${ICONS.check} In your list`:`${ICONS.plus} Add to List`}</button>
+      </div>
     </div>`;
+  },
+  afToggleHTML(){
+    return `<div class="af-toggle" role="group" aria-label="Filter list">
+      <button class="${!this.afOnly?'on':''}" onclick="Jibes.setAF(false)">All picks</button>
+      <button class="${this.afOnly?'on':''}" onclick="Jibes.setAF(true)">${ICONS.shield}Allergy-Friendly only</button>
+    </div>`;
+  },
+  applyAF(list){
+    return this.afOnly ? list.filter(p=>this.listInfo(p).top9) : list;
+  },
+  setAF(on){
+    if(on && !this.afAck){ this.pendingAF = true; return this.showAFConfirm(); }
+    this.afOnly = on;
+    try{ sessionStorage.setItem('jibes_af_only', on?'1':''); }catch(e){}
+    this.route();
+  },
+  showAFConfirm(){
+    const m = document.getElementById('modal');
+    m.dataset.kind = 'af';
+    m.innerHTML = `<div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="afTitle">
+      <div class="mi">${ICONS.shield}</div>
+      <h3 id="afTitle">About the Allergy-Friendly list</h3>
+      <p>These picks carry a <b>top-9 allergen-free claim from the brand or a certifier</b>. Jibes gathers and organizes that information — we don't test or guarantee any product ourselves.</p>
+      <p><b>Always read the actual product label before you buy</b>, since ingredients and manufacturing can change at any time.</p>
+      <div class="modal-acts">
+        <button class="btn btn-outline btn-sm" onclick="Jibes.closeAF(false)">Cancel</button>
+        <button class="btn btn-primary btn-sm" onclick="Jibes.closeAF(true)">Got it — show me</button>
+      </div>
+    </div>`;
+    m.classList.add('is-show');
+  },
+  closeAF(ok){
+    const m = document.getElementById('modal');
+    m.classList.remove('is-show');
+    if(ok){
+      this.afAck = true;
+      try{ sessionStorage.setItem('jibes_af_ack','1'); }catch(e){}
+      if(this.pendingAF){ this.afOnly = true; try{ sessionStorage.setItem('jibes_af_only','1'); }catch(e){} }
+    }
+    this.pendingAF = false;
+    if(ok) this.route();
+  },
+  showBadgeGuide(){
+    const m = document.getElementById('modal');
+    m.dataset.kind = 'badge';
+    m.innerHTML = `<div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="bgTitle">
+      <div class="mi">${ICONS.shield}</div>
+      <h3 id="bgTitle">What the badges mean</h3>
+      <p>Two different things, checked separately — a product can have one, both, or neither.</p>
+      <div class="badge-guide">
+        <div class="bg-row">
+          <span class="lb friendly">${ICONS.shield}Allergy-Friendly</span>
+          <span>Its maker or a certifier labels it <b>free of the top 9 allergens</b>. This says nothing about how clean or simple the ingredients are.</span>
+        </div>
+        <div class="bg-row">
+          <span class="lb clean">${ICONS.leaf2}Clean</span>
+          <span>Simple, natural ingredients — no artificial colors, flavors, or preservatives. <b>It is not screened for allergens</b>, so it may well contain them.</span>
+        </div>
+      </div>
+      <p><b>Allergy-Friendly doesn't mean Clean, and Clean doesn't mean Allergy-Friendly.</b> Always read the product label before you buy.</p>
+      <div class="modal-acts">
+        <a class="btn btn-outline btn-sm" href="#/how" onclick="Jibes.closeBadgeGuide()">How Jibes works</a>
+        <button class="btn btn-primary btn-sm" onclick="Jibes.closeBadgeGuide()">Got it</button>
+      </div>
+    </div>`;
+    m.classList.add('is-show');
+  },
+  closeBadgeGuide(){
+    document.getElementById('modal').classList.remove('is-show');
+    this.badgeAck = true;
+    try{ sessionStorage.setItem('jibes_badge_ack','1'); }catch(e){}
+  },
+  modalBackdrop(){
+    const m = document.getElementById('modal');
+    if(m.dataset.kind === 'badge') return this.closeBadgeGuide();
+    return this.closeAF(false);
   },
   buyLinks(p){
     const q = encodeURIComponent(`${p.brand} ${p.name}`);
-    return [
-      {name:"Amazon", url:`https://www.amazon.com/s?k=${q}`},
-      {name:"Thrive Market", url:`https://thrivemarket.com/search?q=${q}`},
-    ];
+    return RETAILERS.map(r=>({name:r.name, key:r.key, url:r.search(q), price:this.retailPrice(p,r), note:r.note}));
   },
+  retailPrice(p, r){ return Math.round(p.price * r.factor * 100) / 100; },
   productGrid(list){
     if(!list.length) return `<div class="empty-aisle"><div class="e">🧺</div><p><b>We're still stocking this aisle.</b><br>New allergy-friendly picks are added every week — check back soon.</p></div>`;
     return `<div class="product-grid">${list.map(p=>this.productCard(p)).join("")}</div>`;
@@ -756,7 +984,7 @@ const Jibes = {
     return `<div class="icon-row">
       <div class="it">${ICONS.leaf} Ingredient Transparency</div>
       <div class="it">${ICONS.shield} Allergy Aware</div>
-      <div class="it">${ICONS.check} Carefully Vetted</div>
+      <div class="it">${ICONS.check} Carefully Curated</div>
       <div class="it">${ICONS.compare} Compare Trusted Retailers</div>
     </div>`;
   },
@@ -959,7 +1187,7 @@ const Jibes = {
     const cat = CATEGORIES.find(c=>c.id===catId);
     const sub = cat && cat.subcats && cat.subcats.find(s=>s.id===subId);
     if(!cat || !sub) return this.renderHome();
-    const list = PRODUCTS.filter(p=>p.category===catId && p.subcat===subId);
+    const list = this.applyAF(PRODUCTS.filter(p=>p.category===catId && p.subcat===subId));
     document.title = `${sub.label} — Jibes`;
     document.getElementById("app").innerHTML = `
       ${this.crumbs([{label:"Home",go:"Jibes.nav('home')"},{label:cat.label,go:`Jibes.nav('category',{id:'${cat.id}'})`},{label:sub.label}])}
@@ -969,11 +1197,14 @@ const Jibes = {
         ${this.filterRailHTML(subId, cat)}
         <div>
           <div class="listing-toolbar">
-            <span class="count">Showing ${list.length} of ${sub.count.toLocaleString()} products</span>
-            <div class="sortbox"><label style="font-size:12.5px; color:var(--ink-500);">Sort by</label>
-              <select onchange="Jibes.toast('Sorting is illustrative in this prototype.')">
-                <option>Best Sellers</option><option>Price: Low to High</option><option>Price: High to Low</option><option>Top Rated</option>
-              </select>
+            <span class="count">Showing ${list.length}${this.afOnly?' allergy-friendly':''} of ${sub.count.toLocaleString()} products</span>
+            <div class="toolbar-right">
+              ${this.afToggleHTML()}
+              <div class="sortbox"><label style="font-size:12.5px; color:var(--ink-500);">Sort by</label>
+                <select onchange="Jibes.toast('Sorting is illustrative in this prototype.')">
+                  <option>Best Sellers</option><option>Price: Low to High</option><option>Price: High to Low</option><option>Top Rated</option>
+                </select>
+              </div>
             </div>
           </div>
           ${this.productGrid(list)}
@@ -991,11 +1222,12 @@ const Jibes = {
       <div class="page-head">
         <span class="badge-pill" style="background:var(--chip-${key}-bg); color:var(--chip-${key}-fg);">${ICONS[a.icon]}${a.label}</span>
         <h1 style="margin-top:12px;">${a.label} Shop</h1>
-        <p>Every product here has been screened and labeled ${a.label.toLowerCase()} — across food, household, personal care, and more.</p>
+        <p>Every product here is labeled ${a.label.toLowerCase()} by its maker or a certifier — Jibes gathers that information. Always confirm on the product label.</p>
       </div>
       ${this.trustIconsRow()}
       <div class="listing-toolbar"><span class="count">${list.length} products match</span></div>
       ${this.productGrid(list)}`;
+    if(!this.afAck) this.showAFConfirm();
   },
 
   renderCollection(id){
@@ -1004,6 +1236,7 @@ const Jibes = {
     let list;
     if(cat.collection==="fragrance") list = PRODUCTS.filter(p=>(p.free||[]).includes("fragrance"));
     else list = PRODUCTS.filter(p=>p.simple && p.simple<=5);
+    list = this.applyAF(list);
     document.title = `${cat.label} — Jibes`;
     document.getElementById("app").innerHTML = `
       ${this.crumbs([{label:"Home",go:"Jibes.nav('home')"},{label:cat.label}])}
@@ -1013,17 +1246,18 @@ const Jibes = {
           : "Foods made with five ingredients or less — no artificial colors, flavors, or preservatives."}</p>
       </div>
       ${this.trustIconsRow()}
-      <div class="listing-toolbar"><span class="count">${list.length} products match</span></div>
+      <div class="listing-toolbar"><span class="count">${list.length} products match</span>${this.afToggleHTML()}</div>
       ${this.productGrid(list)}`;
   },
 
   renderSearchResults(q){
     const needle = q.toLowerCase();
-    const list = PRODUCTS.filter(p => p.name.toLowerCase().includes(needle) || p.brand.toLowerCase().includes(needle) || p.category.includes(needle));
+    const list = this.applyAF(PRODUCTS.filter(p => p.name.toLowerCase().includes(needle) || p.brand.toLowerCase().includes(needle) || p.category.includes(needle)));
     document.title = `"${q}" — Jibes`;
     document.getElementById("app").innerHTML = `
       ${this.crumbs([{label:"Home",go:"Jibes.nav('home')"},{label:`Search: "${q}"`}])}
       <div class="page-head"><h1>Results for "${q}"</h1><p>${list.length} product${list.length===1?'':'s'} found.</p></div>
+      <div class="listing-toolbar"><span class="count">${list.length} shown</span>${this.afToggleHTML()}</div>
       ${this.productGrid(list)}`;
   },
 
@@ -1034,6 +1268,104 @@ const Jibes = {
       ${this.crumbs([{label:"Home",go:"Jibes.nav('home')"},{label:"Favorites"}])}
       <div class="page-head"><h1>Your Favorites</h1><p>Products you've saved for later.</p></div>
       ${list.length ? this.productGrid(list) : `<div class="empty-aisle"><div class="e">🤍</div><p><b>No favorites yet.</b><br>Tap the heart on any product to save it here.</p></div>`}`;
+  },
+
+  renderList(){
+    document.title = "Your Jibes List — Jibes";
+    const app = document.getElementById("app");
+    const items = this.listItems();
+    if(!items.length){
+      app.innerHTML = `
+        ${this.crumbs([{label:"Home",go:"Jibes.nav('home')"},{label:"Your List"}])}
+        <div class="page-head"><h1>Your Jibes List</h1><p>Add products as you browse, then compare your whole basket across retailers right here — no going back and forth.</p></div>
+        <div class="empty-aisle"><div class="e">🧺</div><p><b>Your list is empty.</b><br>Tap “Add to List” on any product to start building your basket.</p>
+          <div style="margin-top:16px;"><button class="btn btn-primary" onclick="Jibes.nav('home')">Start browsing →</button></div></div>`;
+      return;
+    }
+    if(!RETAILERS.find(x=>x.key===this.activeRetailer)) this.activeRetailer = "amazon";
+    const cheapest = this.cheapestRetailer();
+    const active = this.activeRetailer;
+    const r = RETAILERS.find(x=>x.key===active);
+    const tiles = RETAILERS.map(rt=>{
+      const t = this.basketTotal(rt.key);
+      return `<button class="rtile ${rt.key===active?'is-active':''} ${rt.key===cheapest?'is-low':''}" onclick="Jibes.setRetailer('${rt.key}')">
+        <span class="rt-name">${rt.name}${rt.key===cheapest?'<span class="low-tag">Lowest</span>':''}</span>
+        <span class="rt-total tabular">$${t.toFixed(2)}</span>
+        <span class="rt-sub">${this.listCount()} item${this.listCount()===1?'':'s'}${rt.note?(' · '+rt.note):''}</span>
+      </button>`;
+    }).join("");
+    const rows = items.map(x=>{
+      const unit = this.retailPrice(x.p, r);
+      const li = this.listInfo(x.p);
+      const q = encodeURIComponent(`${x.p.brand} ${x.p.name}`);
+      return `<div class="listrow">
+        <a class="lr-img" href="#/product/${x.p.id}" onclick="event.preventDefault();Jibes.nav('product',{id:'${x.p.id}'})">${this.swatchHTML(x.p.sw, x.p.emoji)}</a>
+        <div class="lr-main">
+          <div class="lr-brand">${x.p.brand}</div>
+          <a class="lr-name" href="#/product/${x.p.id}" onclick="event.preventDefault();Jibes.nav('product',{id:'${x.p.id}'})">${x.p.name}</a>
+          <div class="lr-badges">${li.top9?`<span class="lb friendly">${ICONS.shield}Allergy-Friendly</span>`:''}${li.clean?`<span class="lb clean">${ICONS.leaf2}Clean</span>`:''}</div>
+        </div>
+        <div class="lr-qty">
+          <button aria-label="Decrease quantity" onclick="Jibes.setQty('${x.p.id}', ${x.qty-1})">−</button>
+          <span class="tabular">${x.qty}</span>
+          <button aria-label="Increase quantity" onclick="Jibes.setQty('${x.p.id}', ${x.qty+1})">+</button>
+        </div>
+        <div class="lr-price tabular">$${(unit*x.qty).toFixed(2)}<span class="lr-unit">$${unit.toFixed(2)} ea</span></div>
+        <div class="lr-actions">
+          <a class="lr-open" href="${r.search(q)}" target="_blank" rel="noopener sponsored" title="Open at ${r.name}">${ICONS.external}</a>
+          <button class="lr-remove" aria-label="Remove from list" onclick="Jibes.removeFromList('${x.p.id}')">${ICONS.trash}</button>
+        </div>
+      </div>`;
+    }).join("");
+    const total = this.basketTotal(active);
+    app.innerHTML = `
+      ${this.crumbs([{label:"Home",go:"Jibes.nav('home')"},{label:"Your List"}])}
+      <div class="page-head"><h1>Your Jibes List</h1><p>Your basket, priced at each retailer side by side. Pick where to buy — Jibes never handles payment; you check out on the retailer's own site.</p></div>
+      <div class="rtiles">${tiles}</div>
+      <div class="list-panel">
+        <div class="list-panel-head">
+          <span>${this.listCount()} item${this.listCount()===1?'':'s'} · priced at <b>${r.name}</b></span>
+          <button class="clear-list" onclick="Jibes.clearList()">${ICONS.trash} Clear list</button>
+        </div>
+        <div class="listrows">${rows}</div>
+        <div class="list-foot">
+          <div class="list-total">Estimated total at ${r.name}<b class="tabular">$${total.toFixed(2)}</b></div>
+          <button class="btn btn-primary" onclick="Jibes.openBasket('${active}')">${ICONS.external} Shop these at ${r.name}</button>
+        </div>
+      </div>
+      <div class="list-note">${ICONS.alert}<div><b>Prices are illustrative estimates and vary by retailer.</b> Jibes doesn't process payment — “Shop these” hands your basket to ${r.name}, where you complete checkout, and each item's <span style="white-space:nowrap;">${ICONS.external} link</span> opens it directly. Allergen info comes from manufacturers and can change — always read the label before you buy. Retailer links are affiliate links.</div></div>`;
+  },
+
+  renderHow(){
+    document.title = "How Jibes Works — Jibes";
+    document.getElementById("app").innerHTML = `
+      ${this.crumbs([{label:"Home",go:"Jibes.nav('home')"},{label:"How Jibes Works"}])}
+      <div class="page-head"><h1>How Jibes Works</h1><p>Jibes is a curator, not a tester. We choose products worth featuring and gather each brand's allergen labeling and certifications in one place — we don't test, certify, or guarantee any product ourselves.</p></div>
+
+      <div class="how-video">
+        ${ICONS.play}
+        <div><b>A 90-second explainer is on the way.</b><br><span style="font-size:12.5px; color:var(--ink-500);">It'll walk through the two lists and what to check before you buy.</span></div>
+      </div>
+
+      <div class="how-lists">
+        <div class="how-list">
+          <div class="hl-seal friendly">${ICONS.shield}</div>
+          <h3>Allergy-Friendly</h3>
+          <p>Products the maker or a certifier labels free of specific top-9 allergens. The claim is theirs; Jibes shows it with the source named. These are the only products that appear in the <b>Shop by Allergy</b> filters.</p>
+        </div>
+        <div class="how-list">
+          <div class="hl-seal clean">${ICONS.leaf2}</div>
+          <h3>Clean-Ingredient</h3>
+          <p>Products the maker describes as free of artificial colors, flavors, and preservatives, with simple ingredient lists. Chosen for ingredient quality — <b>not screened for allergens</b>, so a Clean pick may contain them.</p>
+        </div>
+      </div>
+
+      <div class="how-note">
+        ${ICONS.alert}
+        <div><b>Always read the actual product label before you buy.</b> Allergen information comes from manufacturers and certifiers and can change at any time. A "Clean" badge is never a statement about allergens, and no badge on Jibes replaces the label in your hand.</div>
+      </div>
+
+      <div style="margin:26px 0 10px;"><button class="btn btn-primary" onclick="Jibes.nav('home')">Start browsing →</button></div>`;
   },
 
   renderProduct(id){
@@ -1061,15 +1393,17 @@ const Jibes = {
           <div class="rating"><span class="stars">${this.stars(p.rating)}</span> ${p.rating} <span class="tabular">(${p.reviews} Reviews)</span></div>
           <div class="price tabular">$${p.price.toFixed(2)} <span style="font-size:13px; color:var(--ink-500); font-family:var(--font-body); font-weight:500;">${p.size?('· '+p.size):''}</span></div>
           <div class="pdp-buybox">
-            <h3>${ICONS.compare} Where to Buy</h3>
-            <p class="sub">Jibes doesn't sell directly. These are affiliate links to our retail partners — if you buy through one, Jibes may earn a commission at no extra cost to you. Prices vary by retailer.</p>
+            <h3>${ICONS.bag} Add to your Jibes List</h3>
+            <p class="sub">Add items as you browse, then compare the whole basket priced at Amazon, Thrive Market, and Walmart before you buy. Jibes doesn't sell directly — you check out on the retailer's own site, and Jibes may earn a commission at no extra cost to you.</p>
+            <button class="btn btn-primary" style="width:100%; margin-bottom:14px;" id="pdpListBtn" onclick="Jibes.addToList('${p.id}', document.getElementById('pdpListBtn'))">${this.inList(p.id)?`${ICONS.check} In your list — add another`:`${ICONS.plus} Add to Jibes List`}</button>
             <div class="pdp-buy-list">
               ${this.buyLinks(p).map((b,i)=>`
                 <div class="pdp-buy-row">
-                  <div><div class="who">${b.name}</div><div class="note">Opens in a new tab</div></div>
-                  <a class="btn ${i===0?'btn-green':'btn-outline'}" href="${b.url}" target="_blank" rel="noopener sponsored">Buy at ${b.name} ${ICONS.external}</a>
+                  <div><div class="who">${b.name}</div><div class="note">est. $${b.price.toFixed(2)}${b.note?(' · '+b.note):''}</div></div>
+                  <a class="btn ${i===0?'btn-green':'btn-outline'} btn-sm" href="${b.url}" target="_blank" rel="noopener sponsored">Buy now ${ICONS.external}</a>
                 </div>`).join("")}
             </div>
+            <p class="sub" style="margin:12px 0 0;">Prices are illustrative estimates and vary by retailer — confirm the current price and the label at checkout.</p>
           </div>
           <div class="pdp-cta">
             <button class="btn btn-outline" id="pdpFavBtn" onclick="Jibes.toggleFav('${p.id}', document.getElementById('pdpFavBtn'), true)">${isFav?'♥ Saved to Favorites':'♡ Add to Favorites'}</button>
@@ -1110,6 +1444,7 @@ const Jibes = {
         <div class="rail-row">${related.map(r=>this.productCard(r)).join("")}</div>
       </section>`:""}
     `;
+    if(!this.badgeAck) this.showBadgeGuide();
   },
 
   switchThumb(i, el){
@@ -1131,7 +1466,67 @@ const Jibes = {
   syncBadges(){
     const fc = this.favs.length;
     const fEl = document.getElementById("favCount");
-    fEl.textContent = fc; fEl.hidden = fc===0;
+    if(fEl){ fEl.textContent = fc; fEl.hidden = fc===0; }
+    const lc = this.listCount();
+    const lEl = document.getElementById("listCount");
+    if(lEl){ lEl.textContent = lc; lEl.hidden = lc===0; }
+  },
+
+  /* ---------- Jibes List (multi-retailer basket) ---------- */
+  listQty(id){ const it = this.list.find(x=>x.id===id); return it ? it.qty : 0; },
+  inList(id){ return this.list.some(x=>x.id===id); },
+  listCount(){ return this.list.reduce((s,x)=>s+x.qty, 0); },
+  listItems(){ return this.list.map(x=>({qty:x.qty, p:PRODUCTS.find(pr=>pr.id===x.id)})).filter(x=>x.p); },
+  basketTotal(rkey){
+    const r = RETAILERS.find(x=>x.key===rkey);
+    return this.listItems().reduce((s,x)=>s + this.retailPrice(x.p, r)*x.qty, 0);
+  },
+  cheapestRetailer(){
+    if(!this.list.length) return null;
+    return RETAILERS.map(r=>({key:r.key, t:this.basketTotal(r.key)})).sort((a,b)=>a.t-b.t)[0].key;
+  },
+  addToList(id, el){
+    const it = this.list.find(x=>x.id===id);
+    if(it){ it.qty++; } else { this.list.push({id, qty:1}); }
+    this.persistList(); this.syncBadges();
+    this.toast("Added to your Jibes List");
+    if(el){ el.classList.add("added"); el.innerHTML = `${ICONS.check} In your list`; }
+    if(location.hash.startsWith("#/list")) this.renderList();
+  },
+  setQty(id, q){
+    q = Math.max(0, q|0);
+    const it = this.list.find(x=>x.id===id);
+    if(!it) return;
+    if(q===0){ this.list = this.list.filter(x=>x.id!==id); }
+    else { it.qty = q; }
+    this.persistList(); this.syncBadges(); this.renderList();
+  },
+  removeFromList(id){
+    this.list = this.list.filter(x=>x.id!==id);
+    this.persistList(); this.syncBadges(); this.renderList();
+  },
+  clearList(){
+    this.list = []; this.persistList(); this.syncBadges(); this.renderList();
+  },
+  setRetailer(key){ this.activeRetailer = key; this.renderList(); },
+  amazonCartURL(){
+    const items = this.listItems().filter(x=>x.p.asin);
+    if(!items.length) return null;
+    const tag = "jibesstore-20"; // placeholder associate tag — replace with real Associates tag
+    const params = items.map((x,i)=>`ASIN.${i+1}=${x.p.asin}&Quantity.${i+1}=${x.qty}`).join("&");
+    return `https://www.amazon.com/gp/aws/cart/add.html?AssociateTag=${tag}&${params}`;
+  },
+  openBasket(rkey){
+    const items = this.listItems();
+    if(!items.length) return;
+    if(rkey==="amazon"){
+      const url = this.amazonCartURL();
+      if(url){ window.open(url, "_blank", "noopener"); this.toast("Opening your Amazon cart…"); return; }
+    }
+    const r = RETAILERS.find(x=>x.key===rkey);
+    const q = encodeURIComponent(`${items[0].p.brand} ${items[0].p.name}`);
+    window.open(r.search(q), "_blank", "noopener");
+    if(items.length>1) this.toast(`Opening ${r.name} — use each item's Open link for the rest.`);
   },
 };
 
