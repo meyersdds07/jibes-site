@@ -731,8 +731,8 @@ const SPOTLIGHT_ORDER = Object.keys(BRANDS);
 // ---- Retailers (illustrative price factors; real build would use live/affiliate-feed prices) ----
 const RETAILERS = [
   {key:"amazon",  name:"Amazon",        factor:1.00, search:q=>`https://www.amazon.com/s?k=${q}`},
-  {key:"thrive",  name:"Thrive Market", factor:0.90, search:q=>`https://thrivemarket.com/search?q=${q}`, note:"member price"},
-  {key:"walmart", name:"Walmart",       factor:0.97, search:q=>`https://www.walmart.com/search?q=${q}`},
+  {key:"thrive",  name:"Thrive Market", factor:1.00, search:q=>`https://thrivemarket.com/search?q=${q}`},
+  {key:"walmart", name:"Walmart",       factor:1.00, search:q=>`https://www.walmart.com/search?q=${q}`},
 ];
 
 // ---- App state ----
@@ -865,7 +865,7 @@ const Jibes = {
       ${li.top9?`<div class="claimsrc">${ICONS.check}<span>${li.source}</span></div>`:''}
       ${(li.clean && !li.top9)?`<div class="pcaution">${ICONS.alert}<span>Not selected as top-9 allergen-free — read the label.</span></div>`:''}
       <div class="price tabular">$${p.price.toFixed(2)} <span style="font-size:11px; font-weight:500; color:var(--ink-500);">at retailer</span></div>
-      <div class="afflabel">${ICONS.external} Compare Amazon, Thrive &amp; Walmart on your list</div>
+      <div class="afflabel">${ICONS.external} Add to your list to buy at Amazon, Thrive, or Walmart</div>
       <div class="buyrow">
         <button class="addlist-btn ${this.inList(p.id)?'added':''}" onclick="Jibes.addToList('${p.id}', this)">${this.inList(p.id)?`${ICONS.check} In your list`:`${ICONS.plus} Add to List`}</button>
       </div>
@@ -1320,7 +1320,7 @@ const Jibes = {
     const total = this.basketTotal(active);
     app.innerHTML = `
       ${this.crumbs([{label:"Home",go:"Jibes.nav('home')"},{label:"Your List"}])}
-      <div class="page-head"><h1>Your Jibes List</h1><p>Your basket, priced at each retailer side by side. Pick where to buy — Jibes never handles payment; you check out on the retailer's own site.</p></div>
+      <div class="page-head"><h1>Your Jibes List</h1><p>Your basket, gathered in one place. Pick where to buy — Jibes never handles payment; you check out on the retailer's own site.</p></div>
       <div class="rtiles">${tiles}</div>
       <div class="list-panel">
         <div class="list-panel-head">
@@ -1333,7 +1333,7 @@ const Jibes = {
           <button class="btn btn-primary" onclick="Jibes.openBasket('${active}')">${ICONS.external} Shop these at ${r.name}</button>
         </div>
       </div>
-      <div class="list-note">${ICONS.alert}<div><b>Prices are illustrative estimates and vary by retailer.</b> Jibes doesn't process payment — “Shop these” hands your basket to ${r.name}, where you complete checkout, and each item's <span style="white-space:nowrap;">${ICONS.external} link</span> opens it directly. Allergen info comes from manufacturers and can change — always read the label before you buy. Retailer links are affiliate links.</div></div>`;
+      <div class="list-note">${ICONS.alert}<div><b>Prices are illustrative estimates.</b> Confirm the current price at each retailer's checkout. Jibes doesn't process payment — “Shop these” hands your basket to ${r.name}, where you complete checkout, and each item's <span style="white-space:nowrap;">${ICONS.external} link</span> opens it directly. Allergen info comes from manufacturers and can change — always read the label before you buy. Retailer links are affiliate links.</div></div>`;
   },
 
   renderHow(){
@@ -1403,7 +1403,7 @@ const Jibes = {
                   <a class="btn ${i===0?'btn-green':'btn-outline'} btn-sm" href="${b.url}" target="_blank" rel="noopener sponsored">Buy now ${ICONS.external}</a>
                 </div>`).join("")}
             </div>
-            <p class="sub" style="margin:12px 0 0;">Prices are illustrative estimates and vary by retailer — confirm the current price and the label at checkout.</p>
+            <p class="sub" style="margin:12px 0 0;">Prices are illustrative estimates — confirm the current price and the label at each retailer's checkout.</p>
           </div>
           <div class="pdp-cta">
             <button class="btn btn-outline" id="pdpFavBtn" onclick="Jibes.toggleFav('${p.id}', document.getElementById('pdpFavBtn'), true)">${isFav?'♥ Saved to Favorites':'♡ Add to Favorites'}</button>
@@ -1483,7 +1483,10 @@ const Jibes = {
   },
   cheapestRetailer(){
     if(!this.list.length) return null;
-    return RETAILERS.map(r=>({key:r.key, t:this.basketTotal(r.key)})).sort((a,b)=>a.t-b.t)[0].key;
+    const totals = RETAILERS.map(r=>({key:r.key, t:this.basketTotal(r.key)}));
+    const min = Math.min(...totals.map(x=>x.t));
+    const atMin = totals.filter(x=>Math.abs(x.t-min) < 0.005);
+    return atMin.length===1 ? atMin[0].key : null; // no "lowest" tag unless one is genuinely cheaper
   },
   addToList(id, el){
     const it = this.list.find(x=>x.id===id);
