@@ -410,10 +410,38 @@ select{font:inherit; border:1px solid var(--line); background:var(--card-bg); co
 .hl-seal svg{width:24px; height:24px;}
 .hl-seal.friendly{background:var(--chip-sesame-bg); color:var(--chip-sesame-fg); border-color:var(--chip-sesame-fg);}
 .hl-seal.clean{background:var(--fern-50); color:var(--fern-600); border-color:var(--fern-600);}
-.how-list h3{font-size:18px; margin-bottom:8px;}
-.how-list p{font-size:13.5px; color:var(--ink-500); line-height:1.55; margin:0;}
-.how-list p b{color:var(--ink-900); font-weight:600;}
-.how-note{display:flex; gap:12px; align-items:flex-start; background:var(--chip-peanut-bg); color:var(--chip-peanut-fg); border-radius:var(--radius-m); padding:18px 20px; margin-top:20px; font-size:14px; line-height:1.55;}
+.how-list h3{font-size:35px; font-weight:700; margin-bottom:8px; line-height:1.12;}
+.how-list p{font-size:18px; font-weight:600; color:var(--ink-600); line-height:1.55; margin:0;}
+.how-list p b{color:var(--ink-900); font-weight:700;}
+.how-h2{font-size:20px; margin:36px 0 16px;}
+.how-steps{display:flex; align-items:stretch; gap:6px;}
+@media(max-width:700px){.how-steps{flex-direction:column; gap:0;}}
+.step{flex:1; background:var(--card-bg); border:1px solid var(--line); border-radius:var(--radius-m); padding:22px 22px 24px; box-shadow:var(--shadow-sm); display:flex; flex-direction:column; gap:10px;}
+.step-arrow{display:flex; align-items:center; justify-content:center; color:var(--plum-600); flex-shrink:0; padding:0 4px;}
+.step-arrow svg{width:36px; height:36px;}
+@media(max-width:700px){.step-arrow{padding:10px 0; transform:rotate(90deg);}}
+.step-top{display:flex; align-items:center; justify-content:space-between; margin-bottom:2px;}
+.step-n{width:34px; height:34px; border-radius:50%; background:var(--plum-700); color:#fff; font-family:var(--font-display); font-weight:600; font-size:17px; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+.step-ic{color:var(--fern-600);}
+.step-ic svg{width:24px; height:24px;}
+.step h3{font-size:35px; font-weight:700; line-height:1.12;}
+.step p{font-size:18px; font-weight:600; color:var(--ink-600); line-height:1.6; margin:0;}
+.step p b{color:var(--ink-900); font-weight:700;}
+.how-isnt{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+@media(max-width:640px){.how-isnt{grid-template-columns:1fr;}}
+.isnt-col{background:var(--card-bg); border:1px solid var(--line); border-radius:var(--radius-m); padding:20px; box-shadow:var(--shadow-sm);}
+.isnt-col h4{font-size:35px; font-weight:700; margin-bottom:14px; line-height:1.12;}
+.isnt-col.is h4{color:var(--fern-700);}
+.isnt-col.isnt h4{color:var(--rose-600);}
+.isnt-col ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px;}
+.isnt-col li{display:flex; gap:10px; align-items:flex-start; font-size:18px; font-weight:600; color:var(--ink-600); line-height:1.5;}
+.isnt-col li svg{width:17px; height:17px; flex-shrink:0; margin-top:1px;}
+.isnt-col.is li svg{color:var(--fern-600);}
+.isnt-col.isnt li svg{color:var(--rose-600);}
+.isnt-col li b{color:var(--ink-900); font-weight:700;}
+.how-note{display:flex; gap:12px; align-items:flex-start; background:var(--chip-peanut-bg); color:var(--chip-peanut-fg); border-radius:var(--radius-m); padding:20px 22px; margin-top:20px; line-height:1.55;}
+.note-title{font-family:var(--font-display); font-size:35px; font-weight:700; line-height:1.15; margin-bottom:8px;}
+.note-body{font-size:18px; font-weight:600; line-height:1.55; margin:0;}
 .how-note svg{width:22px; height:22px; flex-shrink:0; margin-top:1px;}
 .how-note b{color:inherit;}
 
@@ -513,7 +541,7 @@ select{font:inherit; border:1px solid var(--line); background:var(--card-bg); co
     <div class="foot-grid">
       <div>
         <button class="wordmark" style="font-size:20px;" onclick="Jibes.nav('home')" aria-label="Jibes home"><img src="jibes-logo.png" alt="Jibes" class="logo-mark" style="height:60px;"></button>
-        <p style="color:var(--ink-500); font-size:13px; max-width:34ch; margin:10px 0 0;">A curated guide to picks that jibe with your allergies — organized in one place, so shopping never has to feel like guesswork.</p>
+        <p style="color:var(--ink-500); font-size:13px; max-width:34ch; margin:10px 0 0;">A curated guide to picks that jibe with your allergies — organized in one place, so finding trusted products never has to feel like guesswork.</p>
       </div>
       <div>
         <h4>Customer Care</h4>
@@ -579,6 +607,9 @@ const ICONS = {
   plus:'<svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
   bag:'<svg viewBox="0 0 24 24" fill="none"><path d="M6 8h12l-1 11a2 2 0 0 1-2 1.8H9a2 2 0 0 1-2-1.8L6 8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>',
   trash:'<svg viewBox="0 0 24 24" fill="none"><path d="M5 7h14M10 7V5h4v2M6 7l1 12.5A1.5 1.5 0 0 0 8.5 21h7a1.5 1.5 0 0 0 1.5-1.5L18 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  x:'<svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  search:'<svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+  arrow:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.5 9.2h9.5V4.6a1.1 1.1 0 0 1 1.9-.78l6.8 6.8a1.1 1.1 0 0 1 0 1.56l-6.8 6.8a1.1 1.1 0 0 1-1.9-.78V14.8H2.5a1.1 1.1 0 0 1-1.1-1.1v-3.4a1.1 1.1 0 0 1 1.1-1.1z"/></svg>',
 };
 
 // ---- Categories ----
@@ -968,7 +999,7 @@ const Jibes = {
     ).join("") : "";
     return `
     <aside class="filter-rail">
-      ${cat ? `<h4>Shop ${cat.label}</h4><ul class="rail-links"><li><button class="${!activeSub?'is-active':''}" onclick="Jibes.nav('category',{id:'${cat.id}'})">All ${cat.label}</button></li>${subLinks}</ul>`:""}
+      ${cat ? `<h4>Browse ${cat.label}</h4><ul class="rail-links"><li><button class="${!activeSub?'is-active':''}" onclick="Jibes.nav('category',{id:'${cat.id}'})">All ${cat.label}</button></li>${subLinks}</ul>`:""}
       <h4>Filter By</h4>
       ${groups.map(g=>`
         <details class="filter-group">
@@ -999,14 +1030,14 @@ const Jibes = {
           <span class="eyebrow">Health Focused, Allergy Friendly Buying Guide</span>
           <h1 style="margin-top:10px;">Healthy Living,<br>Made Simpler.</h1>
           <p>Discover trusted food, household, and personal care products — all in one place.</p>
-          <button class="btn btn-primary" onclick="Jibes.nav('category',{id:'food'})">Shop Now →</button>
+          <button class="btn btn-primary" onclick="Jibes.nav('category',{id:'food'})">Browse picks →</button>
         </div>
         <div id="spotlightCard"></div>
       </div>
       <div class="trustbar">
         <div class="trust-item">${ICONS.leaf} Ingredient Transparency</div>
         <div class="trust-item">${ICONS.shield} Allergy Aware</div>
-        <div class="trust-item">${ICONS.check} Carefully Vetted</div>
+        <div class="trust-item">${ICONS.check} Carefully Curated</div>
         <div class="trust-item">${ICONS.compare} Compare Trusted Retailers</div>
       </div>
     </section>
@@ -1014,7 +1045,7 @@ const Jibes = {
     <section class="section" style="padding-top:0;">
       <div class="split-2">
         <div>
-          <h2 style="font-size:19px; margin-bottom:14px;">Shop by Category</h2>
+          <h2 style="font-size:19px; margin-bottom:14px;">Browse by Category</h2>
           <div class="tile-grid">
             ${CATEGORIES.map(c=>`
               <button class="cat-tile" onclick="Jibes.nav('${c.collection?'collection':'category'}',{id:'${c.id}'})">
@@ -1025,7 +1056,7 @@ const Jibes = {
           </div>
         </div>
         <div>
-          <h2 style="font-size:19px; margin-bottom:14px;">Shop by Allergy</h2>
+          <h2 style="font-size:19px; margin-bottom:14px;">Browse by Allergy</h2>
           <div class="allergy-grid">
             ${Object.entries(ALLERGENS).filter(([k])=>k!=="top9").map(([k,a])=>
               `<button class="allergy-chip" style="background:var(--chip-${k}-bg); color:var(--chip-${k}-fg);" onclick="Jibes.nav('allergy',{key:'${k}'})">${ICONS[a.icon]}${a.label}</button>`
@@ -1160,7 +1191,7 @@ const Jibes = {
       <div class="layout-2col">
         ${this.filterRailHTML(null, cat)}
         <div>
-          <h2 style="font-size:17px; margin-bottom:4px;">Shop ${cat.label} Categories</h2>
+          <h2 style="font-size:17px; margin-bottom:4px;">Browse ${cat.label} Categories</h2>
           <p style="color:var(--ink-500); font-size:13.5px; margin:0 0 16px;">Find the right products for your lifestyle and needs.</p>
           <div class="tile-grid subcats">
             ${cat.subcats.map(s=>{
@@ -1177,7 +1208,7 @@ const Jibes = {
             <div class="txt"><h3>Looking for simple ingredient foods?</h3>
               <div class="promo-checks"><span>✓ 5 ingredients or less</span><span>✓ No artificial colors</span><span>✓ No artificial flavors</span><span>✓ No artificial preservatives</span></div>
             </div>
-            <button class="btn btn-primary btn-sm" onclick="Jibes.nav('collection',{id:'five-ingredients'})">Shop Now</button>
+            <button class="btn btn-primary btn-sm" onclick="Jibes.nav('collection',{id:'five-ingredients'})">Browse picks</button>
           </div>`:""}
         </div>
       </div>`;
@@ -1218,10 +1249,10 @@ const Jibes = {
     const list = PRODUCTS.filter(p=>(p.free||[]).includes(key));
     document.title = `${a.label} — Jibes`;
     document.getElementById("app").innerHTML = `
-      ${this.crumbs([{label:"Home",go:"Jibes.nav('home')"},{label:"Shop by Allergy",go:"Jibes.nav('home')"},{label:a.label}])}
+      ${this.crumbs([{label:"Home",go:"Jibes.nav('home')"},{label:"Browse by Allergy",go:"Jibes.nav('home')"},{label:a.label}])}
       <div class="page-head">
         <span class="badge-pill" style="background:var(--chip-${key}-bg); color:var(--chip-${key}-fg);">${ICONS[a.icon]}${a.label}</span>
-        <h1 style="margin-top:12px;">${a.label} Shop</h1>
+        <h1 style="margin-top:12px;">${a.label} Picks</h1>
         <p>Every product here is labeled ${a.label.toLowerCase()} by its maker or a certifier — Jibes gathers that information. Always confirm on the product label.</p>
       </div>
       ${this.trustIconsRow()}
@@ -1330,28 +1361,43 @@ const Jibes = {
         <div class="listrows">${rows}</div>
         <div class="list-foot">
           <div class="list-total">Estimated total at ${r.name}<b class="tabular">$${total.toFixed(2)}</b></div>
-          <button class="btn btn-primary" onclick="Jibes.openBasket('${active}')">${ICONS.external} Shop these at ${r.name}</button>
+          <button class="btn btn-primary" onclick="Jibes.openBasket('${active}')">${ICONS.external} Buy these at ${r.name}</button>
         </div>
       </div>
-      <div class="list-note">${ICONS.alert}<div><b>Prices are illustrative estimates.</b> Confirm the current price at each retailer's checkout. Jibes doesn't process payment — “Shop these” hands your basket to ${r.name}, where you complete checkout, and each item's <span style="white-space:nowrap;">${ICONS.external} link</span> opens it directly. Allergen info comes from manufacturers and can change — always read the label before you buy. Retailer links are affiliate links.</div></div>`;
+      <div class="list-note">${ICONS.alert}<div><b>Prices are illustrative estimates.</b> Confirm the current price at each retailer's checkout. Jibes doesn't process payment — “Buy these” hands your basket to ${r.name}, where you complete checkout, and each item's <span style="white-space:nowrap;">${ICONS.external} link</span> opens it directly. Allergen info comes from manufacturers and can change — always read the label before you buy. Retailer links are affiliate links.</div></div>`;
   },
 
   renderHow(){
     document.title = "How Jibes Works — Jibes";
     document.getElementById("app").innerHTML = `
       ${this.crumbs([{label:"Home",go:"Jibes.nav('home')"},{label:"How Jibes Works"}])}
-      <div class="page-head"><h1>How Jibes Works</h1><p>Jibes is a curator, not a tester. We choose products worth featuring and gather each brand's allergen labeling and certifications in one place — we don't test, certify, or guarantee any product ourselves.</p></div>
+      <div class="page-head"><h1>How Jibes Works</h1></div>
 
-      <div class="how-video">
-        ${ICONS.play}
-        <div><b>A 90-second explainer is on the way.</b><br><span style="font-size:12.5px; color:var(--ink-500);">It'll walk through the two lists and what to check before you buy.</span></div>
+      <div class="how-steps">
+        <div class="step">
+          <div class="step-top"><span class="step-n">1</span><span class="step-ic">${ICONS.search}</span></div>
+          <h3>Browse curated picks</h3>
+          <p>Every product on Jibes was chosen with allergy families and health-conscious shoppers in mind. Browse by category, or filter by a specific allergen.</p>
+        </div>
+        <div class="step-arrow">${ICONS.arrow}</div>
+        <div class="step">
+          <div class="step-top"><span class="step-n">2</span><span class="step-ic">${ICONS.shield}</span></div>
+          <h3>Check the badges — and the label</h3>
+          <p>Each card shows whether a product is <b>Allergy-Friendly</b>, <b>Clean</b>, both, or neither, with the source of every allergen claim named. Then confirm on the product label.</p>
+        </div>
+        <div class="step-arrow">${ICONS.arrow}</div>
+        <div class="step">
+          <div class="step-top"><span class="step-n">3</span><span class="step-ic">${ICONS.bag}</span></div>
+          <h3>Add to your list, buy your way</h3>
+          <p>Collect what you like in your <b>Jibes List</b>, then buy the whole basket at Amazon, Thrive Market, or Walmart. Jibes never handles payment — you check out on the retailer's own site.</p>
+        </div>
       </div>
 
       <div class="how-lists">
         <div class="how-list">
           <div class="hl-seal friendly">${ICONS.shield}</div>
           <h3>Allergy-Friendly</h3>
-          <p>Products the maker or a certifier labels free of specific top-9 allergens. The claim is theirs; Jibes shows it with the source named. These are the only products that appear in the <b>Shop by Allergy</b> filters.</p>
+          <p>Products the maker or a certifier labels free of specific top-9 allergens. The claim is theirs; Jibes shows it with the source named. These are the only products that appear in the <b>Browse by Allergy</b> filters.</p>
         </div>
         <div class="how-list">
           <div class="hl-seal clean">${ICONS.leaf2}</div>
@@ -1360,12 +1406,34 @@ const Jibes = {
         </div>
       </div>
 
-      <div class="how-note">
-        ${ICONS.alert}
-        <div><b>Always read the actual product label before you buy.</b> Allergen information comes from manufacturers and certifiers and can change at any time. A "Clean" badge is never a statement about allergens, and no badge on Jibes replaces the label in your hand.</div>
+      <div class="how-isnt">
+        <div class="isnt-col is">
+          <h4>Jibes is</h4>
+          <ul>
+            <li>${ICONS.check}<span>A <b>curator</b> — we choose products worth featuring.</span></li>
+            <li>${ICONS.check}<span>An <b>organizer</b> of each brand's allergen labels and certifications, gathered in one place.</span></li>
+            <li>${ICONS.check}<span>A place to <b>build your basket</b> and hand it to the retailer you choose.</span></li>
+          </ul>
+        </div>
+        <div class="isnt-col isnt">
+          <h4>Jibes isn't</h4>
+          <ul>
+            <li>${ICONS.x}<span>A <b>store</b> — we don't sell or ship anything ourselves.</span></li>
+            <li>${ICONS.x}<span>A <b>lab</b> — we don't test, screen, or certify products ourselves.</span></li>
+            <li>${ICONS.x}<span>A <b>replacement for the label</b> — always read it before you buy.</span></li>
+          </ul>
+        </div>
       </div>
 
-      <div style="margin:26px 0 10px;"><button class="btn btn-primary" onclick="Jibes.nav('home')">Start browsing →</button></div>`;
+      <div class="how-note">
+        ${ICONS.alert}
+        <div>
+          <div class="note-title">Always read the actual product label before you buy.</div>
+          <p class="note-body">Allergen information comes from manufacturers and certifiers and can change at any time. A "Clean" badge is never a statement about allergens, and no badge on Jibes replaces the label in your hand.</p>
+        </div>
+      </div>
+
+      <div style="margin:30px 0 10px;"><button class="btn btn-primary" style="font-size:29px; padding:16px 38px;" onclick="Jibes.nav('home')">Start browsing →</button></div>`;
   },
 
   renderProduct(id){
